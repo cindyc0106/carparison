@@ -3,11 +3,12 @@ import { FaStar } from "react-icons/fa";
 // import "components/RatingStars.css";
 
 function RatingStars() {
-  const stars = [...Array(5)].map((star) => {
+  const stars = [...Array(5)].map((star, index) => {
+    const value = index + 1;
     return (
       <label>
-        <input type="radio"/>
-        <FaStar size={25} />
+        <input type="radio" value={value}/>
+        <FaStar size={25} className="pointer" />
       </label>
     );
   });
