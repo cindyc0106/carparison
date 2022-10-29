@@ -1,3 +1,17 @@
+
+.Navigator {
+  border: red solid 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.Navigator-searchbar {
+  border: blue solid 1em;
+}
+
 .App {
   text-align: center;
 }
@@ -36,3 +50,4 @@
     transform: rotate(360deg);
   }
 }
+
