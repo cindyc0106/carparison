@@ -50,4 +50,5 @@ input[type="radio"] {
 
 .pointer {
   cursor: pointer;
+  transition: color 250ms
 }
