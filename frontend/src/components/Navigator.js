@@ -8,7 +8,7 @@ import {
 
 import { useState } from 'react';
 
-data = [
+const data = [
   {
     "city_mpg": 23,
     "class": "compact car",
@@ -82,15 +82,26 @@ data = [
 ];
 
 function Navigator() {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState([]);
+
+
 
   return (
     <nav>
       <div className='nav'>
         <h1> LOGO </h1>
-        <form className='searchbar'>
+        <form className='searchBar'>
 
-          <Input placeholder='Search for your car' onChange={e => setQuery(e.target.value)} />
+          <Input type='text' placeholder='Search for your car' onChange={e => setQuery(e.target.value)} />
+          {query.length != 0 &&
+            <div className='carSearch'>
+              {data.map((value, key) => {
+                return <div className='carResults'>
+                  {value.year} {value.make} {value.model}
+                </div>;
+              })}
+            </div>
+          }
 
           <Button colorScheme='teal' variant='outline'>Submit</Button>
           <Button isLoading
@@ -100,8 +111,9 @@ function Navigator() {
             spinnerPlacement='end'
           >
             Submit</Button>
-
         </form>
+
+
 
         <Breadcrumb separator='-'>
           <BreadcrumbItem>
