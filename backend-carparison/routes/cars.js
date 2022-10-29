@@ -4,7 +4,7 @@ const db = require('../db');
 // db.connect();
 
 // (db) => {
-  router.get('/cars', (req, res) => {
+  router.get('/', (req, res) => {
 
     return db.query(
       `SELECT * FROM cars;`
