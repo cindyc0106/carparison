@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Navigator from './components/Navigator'
+import Review from './components/Review'
+import Car from './components/Car'
+import RatingStars from './components/RatingStars';
+import PastReviewList from './components/PastReviewList';
+import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
   return (
+     <ChakraProvider>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      < Navigator />
+      < Review />
+      < Car />
+      < RatingStars />
+      < PastReviewList />
     </div>
+    </ChakraProvider>
   );
 }
 
