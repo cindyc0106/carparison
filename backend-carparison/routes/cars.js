@@ -4,10 +4,10 @@ const db = require('../db');
 // db.connect();
 
 // (db) => {
-  router.get('/', (req, res) => {
+  router.get('/cars', (req, res) => {
 
     return db.query(
-      `SELECT * FROM users;`
+      `SELECT * FROM cars;`
     )
     .then((data) => {
       res.json(data.rows)

@@ -2,6 +2,7 @@
   "name": "backend-carparison",
   "version": "0.0.0",
   "private": true,
+   "main": "app.js",
   "scripts": {
     "start": "./node_modules/.bin/nodemon app.js",
     "dev": "./node_modules/.bin/nodemon --watch server -e js routes/index.js",
