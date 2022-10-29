@@ -1,9 +1,9 @@
-DROP TABLE IF EXISTS posts CASCADE;
+DROP TABLE IF EXISTS cars CASCADE;
 
 CREATE TABLE cars(
     id SERIAL PRIMARY KEY NOT NULL,
     city_mpg INTEGER,
-    class TEXT,
+    class VARCHAR(255),
     combination_mpg INTEGER,
     cylinders INTEGER,
     displacement INTEGER,

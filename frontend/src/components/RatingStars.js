@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { FaStar } from "react-icons/fa";
-// import "components/RatingStars.css";
+import "./RatingStars.css";
 
 function RatingStars() {
 
@@ -21,6 +21,7 @@ function RatingStars() {
           <FaStar 
             size={25} 
             className="pointer" 
+            // have the yellow color take effect when hovered, or else is grey
             color={ value <= (hover || rating) ? "#f9d02f": "#c7c7c7"}
             onMouseEnter={() => setHover(value)}
             onMouseLeave={() => setHover(null)}

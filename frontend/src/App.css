@@ -36,19 +36,3 @@
     transform: rotate(360deg);
   }
 }
-/* 
-star styling */
-.stars {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-input[type="radio"] {
-  display: none;
-}
-
-.pointer {
-  cursor: pointer;
-  transition: color 250ms
-}
