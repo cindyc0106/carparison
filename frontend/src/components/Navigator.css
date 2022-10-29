@@ -4,3 +4,12 @@
   align-items: center;
   justify-content: space-evenly;
 }
+
+.searchBar {
+  display: flex;
+  flex-direction: row;
+}
+
+#clearBtn {
+
+}

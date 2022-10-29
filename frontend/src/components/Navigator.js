@@ -3,7 +3,9 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   Input,
-  Button
+  Button,
+  SearchIcon,
+  CloseButton,
 } from '@chakra-ui/react';
 
 import { useState } from 'react';
@@ -56,9 +58,11 @@ const data = [
 
 function Navigator() {
   const [query, setQuery] = useState([]);
+  const [search, setSearch] = useState("");
 
   const handleSearch = (e) => {
     const searchCar = e.target.value;
+    setSearch(searchCar);
     const newCar = data.filter((value) => {
       return (value.make.toLowerCase().includes(searchCar.toLowerCase())) || (value.model.toLowerCase().includes(searchCar.toLowerCase()) || (value.year.toString().includes(searchCar)));
     });
@@ -68,14 +72,24 @@ function Navigator() {
       setQuery(newCar);
     }
   };
+  
+  // add clear button for input field
+  const clearInput = () => {
+    setQuery("");
+    setSearch("");
+  };
 
   return (
     <nav>
       <div className='nav'>
         <h1> LOGO </h1>
-        <form className='searchBar'>
-
-          <Input type='text' placeholder='Search for your car...' onChange={handleSearch} />
+        <form className='form'>
+          <div className='searchBar'>
+            <Input type='text' placeholder='Search for your car...' value={search} onChange={handleSearch} />
+            <div>
+              {query.length != 0 && <CloseButton id='clearBtn' onClick={clearInput} />}
+            </div>
+          </div>
           {query.length != 0 &&
             <div className='carSearch'>
               {query.map((value, key) => {
