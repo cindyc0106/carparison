@@ -12,7 +12,6 @@ function Car() {
     .then((res) => JSON.parse(JSON.stringify(res)))
     .then((data) => {
       setCars(data.data)
-      console.log(data.data)
     })
 
   },[])
