@@ -13,8 +13,8 @@ function App() {
         <Navigator />
         <CarSearch />
 
-    {/* <Review /> */}
-        <PastReviewList />
+    {/* <Review />  <PastReviewList />*/}
+        
       </div>
     </ChakraProvider>
   );
