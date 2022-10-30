@@ -1,0 +1,9 @@
+.nav {
+  display: flex;
+
+}
+
+.searchBar {
+  border: red solid 1px;
+  display: flex;
+}

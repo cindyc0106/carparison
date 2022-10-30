@@ -4,57 +4,13 @@ import {
   BreadcrumbLink,
   Input,
   Button,
-  SearchIcon,
+  // SearchIcon,
   CloseButton,
 } from '@chakra-ui/react';
 
 import { useState } from 'react';
+import axios from "axios";
 import './Navigator.css';
-
-const data = [
-  {
-    "city_mpg": 23,
-    "class": "compact car",
-    "combination_mpg": 24,
-    "cylinders": 4,
-    "displacement": 1.6,
-    "drive": "fwd",
-    "fuel_type": "gas",
-    "highway_mpg": 26,
-    "make": "toyota",
-    "model": "corolla",
-    "transmission": "a",
-    "year": 1993
-  },
-  {
-    "city_mpg": 18,
-    "class": "midsize car",
-    "combination_mpg": 21,
-    "cylinders": 4,
-    "displacement": 2.2,
-    "drive": "fwd",
-    "fuel_type": "gas",
-    "highway_mpg": 26,
-    "make": "toyota",
-    "model": "camry",
-    "transmission": "a",
-    "year": 1993
-  },
-  {
-    "city_mpg": 18,
-    "class": "midsize car",
-    "combination_mpg": 21,
-    "cylinders": 4,
-    "displacement": 2.2,
-    "drive": "fwd",
-    "fuel_type": "gas",
-    "highway_mpg": 26,
-    "make": "lamborghini",
-    "model": "aventador",
-    "transmission": "a",
-    "year": 2022
-  }
-];
 
 function Navigator() {
   const [query, setQuery] = useState([]);
@@ -63,16 +19,23 @@ function Navigator() {
   const handleSearch = (e) => {
     const searchCar = e.target.value;
     setSearch(searchCar);
-    const newCar = data.filter((value) => {
-      return (value.make.toLowerCase().includes(searchCar.toLowerCase())) || (value.model.toLowerCase().includes(searchCar.toLowerCase()) || (value.year.toString().includes(searchCar)));
-    });
-    if (searchCar === "") {
-      setQuery([]);
-    } else {
-      setQuery(newCar);
-    }
+    axios
+      .get("http://localhost:3001/cars")
+      .then((res) => JSON.parse(JSON.stringify(res)))
+      .then((data) => {
+        console.log(data.data);
+        data = data.data;
+        const newCar = data.filter((value) => {
+          return (value.make.toLowerCase().includes(searchCar.toLowerCase())) || (value.model.toLowerCase().includes(searchCar.toLowerCase()) || (value.year.toString().includes(searchCar)));
+        });
+        if (searchCar === "") {
+          setQuery([]);
+        } else {
+          setQuery(newCar);
+        }
+      });
   };
-  
+
   // add clear button for input field
   const clearInput = () => {
     setQuery("");
@@ -85,12 +48,12 @@ function Navigator() {
         <h1> LOGO </h1>
         <form className='form'>
           <div className='searchBar'>
-            <Input type='text' placeholder='Search for your car...' value={search} onChange={handleSearch} />
+            <Input type='text' placeholder='Search for your car...' size='sm' value={search} onChange={handleSearch} />
             <div>
-              {query.length != 0 && <CloseButton id='clearBtn' onClick={clearInput} />}
+              {query.length !== 0 && <CloseButton id='clearBtn' onClick={clearInput} />}
             </div>
           </div>
-          {query.length != 0 &&
+          {query.length !== 0 &&
             <div className='carSearch'>
               {query.map((value, key) => {
                 return <div className='carResults' key={key}>
@@ -102,7 +65,7 @@ function Navigator() {
         </form>
 
         <div className='searchButton'>
-          <Button colorScheme='teal' variant='outline'>Submit</Button>
+          <Button colorScheme='teal' variant='outline' size='sm'>Submit</Button>
           {/* <Button isLoading
             loadingText='Loading'
             colorScheme='teal'
