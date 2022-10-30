@@ -36,7 +36,7 @@ function CarSearch() {
         <FormLabel>Make</FormLabel>
         <Select placeholder="Select Make">
           {/* <option>{make}</option> */}
-          {cars.map((c) => <option>{c.make}</option>)}
+          {cars.map((c, key) => <option key={key}>{c.make}</option>)}
           <option>Nigeria</option>
         </Select>
       </FormControl>
@@ -45,7 +45,7 @@ function CarSearch() {
         <FormLabel>Model</FormLabel>
         <Select placeholder="Select Model">
           {/* <option>{model}</option> */}
-          {cars.map((c) => <option>{c.model}</option>)}
+          {cars.map((c, key) => <option key={key}>{c.model}</option>)}
           <option>Nigeria</option>
         </Select>
       </FormControl>
@@ -54,7 +54,7 @@ function CarSearch() {
         <FormLabel>Year</FormLabel>
         <Select placeholder="Select Year">
           {/* <option>{year}</option> */}
-          {cars.map((c) => <option>{c.year}</option>)}
+          {cars.map((c, key) => <option key={key}>{c.year}</option>)}
           <option>Nigeria</option>
         </Select>
       </FormControl>
