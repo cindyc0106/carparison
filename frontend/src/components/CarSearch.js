@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 
 function CarSearch() {
-  // const [make, setMake] = useState([]);
+  const [make, setMake] = useState([]);
   // const [model, setModel] = useState([]);
   // const [year, setYear] = useState([]);
 
@@ -18,44 +18,41 @@ function CarSearch() {
     axios.get("http://localhost:3001/cars")
       .then((res) => JSON.parse(JSON.stringify(res)))
       .then((data) => {
-        console.log(data.data);
         const carObj = data.data;
         setCars(carObj)
-        // carObj.map((car) => {
-        //   setMake(car.make);
-        //   setModel(car.model);
-        //   setYear(car.year);
-        //   return data.data;
-        // });
       });
-  }, []);
+    }, []);
   
+    // CAR MAKE
+    const carMake = cars.map((car) => car.make) // array of car makes
+    const filtered = function(arr) {
+     return arr.filter((ele, index) => arr.indexOf(ele) === index) 
+    }
+    const fl = filtered(carMake)
+    const carFiltered = fl.map((cars) => <option>{cars}</option> )
+  
+    // CAR MODEL
+
   return (
     <div>
       <FormControl>
         <FormLabel>Make</FormLabel>
         <Select placeholder="Select Make">
-          {/* <option>{make}</option> */}
-          {cars.map((c, key) => <option key={key}>{c.make}</option>)}
-          <option>Nigeria</option>
+          {carFiltered}
         </Select>
       </FormControl>
 
       <FormControl>
         <FormLabel>Model</FormLabel>
         <Select placeholder="Select Model">
-          {/* <option>{model}</option> */}
           {cars.map((c, key) => <option key={key}>{c.model}</option>)}
-          <option>Nigeria</option>
         </Select>
       </FormControl>
 
       <FormControl>
         <FormLabel>Year</FormLabel>
         <Select placeholder="Select Year">
-          {/* <option>{year}</option> */}
           {cars.map((c, key) => <option key={key}>{c.year}</option>)}
-          <option>Nigeria</option>
         </Select>
       </FormControl>
     </div>
