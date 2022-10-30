@@ -15,6 +15,40 @@ function App() {
   const [model, setModel] = useState([])
   const [year, setYear] = useState([])
 
+  const data = [
+    {
+    id: 1,
+    city_mpg: 29,
+    class: "midsize car",
+    combination_mpg: 32,
+    cylinders: 4,
+    displacement: 2,
+    drive: "fwd",
+    fuel_type: "gas",
+    highway_mpg: 37,
+    make: "toyota",
+    model: "corolla",
+    transmission: "a",
+    year: 2015,
+    photo_url: "https://www.carimagery.com/img/v2/5824.jpg"
+    },
+    {
+    id: 2,
+    city_mpg: 25,
+    class: "midsize car",
+    combination_mpg: 28,
+    cylinders: 4,
+    displacement: 3,
+    drive: "fwd",
+    fuel_type: "gas",
+    highway_mpg: 34,
+    make: "toyota",
+    model: "camry",
+    transmission: "a",
+    year: 2015,
+    photo_url: "https://www.carimagery.com/img/v2/12465.jpg"
+    }
+    ]
 
   useEffect(() => {
     axios.get("http://localhost:3001/cars")
@@ -39,7 +73,8 @@ function App() {
         <FormControl>
           <FormLabel>Make</FormLabel>
           <Select placeholder="Select Make">
-            <option>{make}</option>
+          {/* <option>{make}</option> */}
+            {data.map((c) =>  <option>{c.make}</option>)}
             <option>Nigeria</option>
           </Select>
         </FormControl>
@@ -47,7 +82,8 @@ function App() {
         <FormControl>
           <FormLabel>Model</FormLabel>
           <Select placeholder="Select Model">
-            <option>{model}</option>
+          {/* <option>{model}</option> */}
+          {data.map((c) =>  <option>{c.model}</option>)}
             <option>Nigeria</option>
           </Select>
         </FormControl>
@@ -55,7 +91,8 @@ function App() {
         <FormControl>
           <FormLabel>Year</FormLabel>
           <Select placeholder="Select Year">
-            <option>{year}</option>
+            {/* <option>{year}</option> */}
+            {data.map((c) =>  <option>{c.year}</option>)}
             <option>Nigeria</option>
           </Select>
         </FormControl>
