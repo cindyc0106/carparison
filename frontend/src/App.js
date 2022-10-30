@@ -1,17 +1,10 @@
 import "./App.css";
-import { useState, useEffect } from "react";
 import Navigator from "./components/Navigator";
-import axios from 'axios';
-import {
-  ChakraProvider,
-  FormControl,
-  FormLabel,
-  Select,
-} from "@chakra-ui/react";
+// import Review from "./components/Review";
+import { ChakraProvider } from "@chakra-ui/react";
 import CarSearch from "./components/CarSearch";
 
-function App() {
-
+function App() {  
   return (
     <ChakraProvider>
       <div className="App">
@@ -19,6 +12,7 @@ function App() {
         <Navigator />
         <CarSearch />
 
+    {/* <Review /> */}
       </div>
     </ChakraProvider>
   );
