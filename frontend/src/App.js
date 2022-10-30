@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import Navigator from "./components/Navigator";
+// import Review from "./components/Review"
 import axios from 'axios';
 import {
   ChakraProvider,
@@ -20,7 +21,7 @@ function App() {
     axios.get("http://localhost:3001/cars")
     .then((res) => JSON.parse(JSON.stringify(res)))
     .then((data) => {
-      console.log(data.data)
+      // console.log(data.data)
       const carObj = data.data
       carObj.map((car) => {
         setMake(car.make)
@@ -60,6 +61,7 @@ function App() {
           </Select>
         </FormControl>
 
+    {/* <Review /> */}
       </div>
     </ChakraProvider>
   );

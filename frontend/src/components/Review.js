@@ -61,9 +61,9 @@ function Review() {
       setRating(rating)
     })
     .catch((err) => console.log("error msg:", err.message))
-    console.log("user name:", name)
-    console.log("review:", review)
-    console.log("rating:", rating)
+    // console.log("user name:", name)
+    // console.log("review:", review)
+    // console.log("rating:", rating)
   }
 
 

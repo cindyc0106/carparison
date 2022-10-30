@@ -1,0 +1,44 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 15px 100px 15px;
+
+}
+
+.carSearch {
+  margin-top: 30px;
+  width: 170px;
+  height: 50px;
+  background-color: white;
+  box-shadow: black 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+  position: fixed;
+}
+
+.carSearch::-webkit-scrollbar {
+  display: none;
+}
+
+.carSearch .carResults {
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  font-size: small;
+}
+.carSearch .carResults:hover {
+  background-color: lightgray;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form {
+  display: flex;
+}
+.icon {
+  padding: 0 5px;
+}
