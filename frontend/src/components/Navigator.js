@@ -5,7 +5,6 @@ import {
   Input,
   Button,
 } from '@chakra-ui/react';
-
 import { FaSearch, FaRegTimesCircle } from "react-icons/fa";
 import { useState } from 'react';
 import axios from "axios";
@@ -44,7 +43,7 @@ function Navigator() {
   return (
     <nav>
       <div className='nav'>
-        <h1> LOGO </h1>
+        <h1><img alt="" src="logo1.jpeg" className="logo"/></h1>
         <form className='form'>
           <div className='searchBar'>
 
