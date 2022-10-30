@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 
 function CarSearch() {
-  // const [make, setMake] = useState([]);
+  const [make, setMake] = useState([]);
   // const [model, setModel] = useState([]);
   // const [year, setYear] = useState([]);
 
@@ -21,14 +21,24 @@ function CarSearch() {
         const carObj = data.data;
         setCars(carObj)
       });
-  }, []);
+    }, []);
   
+    // CAR MAKE
+    const carMake = cars.map((car) => car.make) // array of car makes
+    const filtered = function(arr) {
+     return arr.filter((ele, index) => arr.indexOf(ele) === index) 
+    }
+    const fl = filtered(carMake)
+    const carFiltered = fl.map((cars) => <option>{cars}</option> )
+  
+    // CAR MODEL
+
   return (
     <div>
       <FormControl>
         <FormLabel>Make</FormLabel>
         <Select placeholder="Select Make">
-          {cars.map((c, key) => <option key={key}>{c.make}</option>)}
+          {carFiltered}
         </Select>
       </FormControl>
 
