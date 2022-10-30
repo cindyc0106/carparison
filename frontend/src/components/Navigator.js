@@ -4,10 +4,9 @@ import {
   BreadcrumbLink,
   Input,
   Button,
-  // SearchIcon,
-  CloseButton,
 } from '@chakra-ui/react';
 
+import { FaSearch, FaRegTimesCircle } from "react-icons/fa";
 import { useState } from 'react';
 import axios from "axios";
 import './Navigator.css';
@@ -48,32 +47,34 @@ function Navigator() {
         <h1> LOGO </h1>
         <form className='form'>
           <div className='searchBar'>
-            <Input type='text' placeholder='Search for your car...' size='sm' value={search} onChange={handleSearch} />
-            <div>
-              {query.length !== 0 && <CloseButton id='clearBtn' onClick={clearInput} />}
+
+            <Input type='text' placeholder='Search for your car...' size='xs' value={search} onChange={handleSearch} />
+            <div className='icon'>
+              {!query.length ? <FaSearch /> : <FaRegTimesCircle id='clearBtn' onClick={clearInput} />}
             </div>
           </div>
           {query.length !== 0 &&
             <div className='carSearch'>
               {query.map((value, key) => {
-                return <div className='carResults' key={key}>
-                  {value.make} {value.model} {value.year}
-                </div>;
+                return (
+                  <div className='carResults' key={key}>
+                    <a>{value.make} {value.model} {value.year} </a>
+                  </div>);
               })}
             </div>
           }
-        </form>
-
-        <div className='searchButton'>
-          <Button colorScheme='teal' variant='outline' size='sm'>Submit</Button>
-          {/* <Button isLoading
+          <div className='searchButton'>
+            <Button colorScheme='teal' variant='outline' size='xs'>Submit</Button>
+            {/* <Button isLoading
             loadingText='Loading'
             colorScheme='teal'
             variant='outline'
             spinnerPlacement='end'
           >
             Submit</Button> */}
-        </div>
+          </div>
+        </form>
+
 
 
 
