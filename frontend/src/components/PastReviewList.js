@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, Heading, Text, Divider, ListItem, List, Avatar, Flex } from "@chakra-ui/react"
+import { getUserById, getReviewsByCarId } from "../helpers/helpers";
 import { FaStar } from "react-icons/fa";
 //import Review from "./Review";
 // import "./PastReviewList.css";
 
 
-function PastReviewList() {
+function PastReviewList(props) {
   const [pastReviews, setPastReviews] = useState([])
+  const [users, setUsers] = useState([])
 
   useEffect(() => {
 
@@ -16,6 +18,15 @@ function PastReviewList() {
     .then((res) => JSON.parse(JSON.stringify(res)))
     .then((data) => {
       setPastReviews(data.data)
+    })
+  }, [])
+
+  useEffect(() => {
+    axios
+    .get("http://localhost:3001/users")
+    .then((res) => JSON.parse(JSON.stringify(res)))
+    .then((data) => {
+      setUsers(data.data)
     })
   }, [])
 
@@ -46,15 +57,17 @@ function PastReviewList() {
     })
     return nonStar
   }
-  const reviews = pastReviews.map((review, index) => {
+  const reviews = getReviewsByCarId(pastReviews, props.id)
+  const show = reviews.map((review, index) => {
     const rating = review.rating;
     
     const star = stars(rating);
-    const nonStar = nonStars(rating)
+    const nonStar = nonStars(rating);
+    const user = getUserById(users, review.user_id )
     return (
       <Box maxW='sm' key={index} borderWidth="1px" borderRadius="lg" >
         <Heading fontSize={20} display='flex' flexDirection='row' p={2} justifyContent='space-between' bg='teal.100'>
-          <div><Avatar boxSize='1.25em'/> user: {review.user_id}</div>
+          <div><Avatar boxSize='1.25em'/> {user.name}</div>
           <Flex direction='row'>{star}{nonStar}</Flex>
         </Heading>
         <Divider orientation="horizontal" />
@@ -63,17 +76,16 @@ function PastReviewList() {
       </Box>
     );
   })
-    return (
-      <h1> This is the PastReviewList 
-        <Box maxW='sm' maxH='sm' overflow='scroll' borderWidth="1px" >
-          <List >
-            <ListItem key={pastReviews.id} >{reviews}</ListItem>
-          </List>
-        </Box>
-        
-        
-      </h1>
-    );
+  return (
+    <h1> This is the PastReviewList 
+      <Box maxW='sm' maxH='sm' overflow='scroll' borderWidth="1px" >
+        <List >
+          <ListItem key={reviews.id} >{show}</ListItem>
+        </List>
+      </Box>
+      
+    </h1>
+  );
   }
   
   export default PastReviewList;
