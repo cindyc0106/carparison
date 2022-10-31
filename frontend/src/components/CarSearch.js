@@ -27,12 +27,12 @@ function CarSearch() {
     return arr.filter((ele, index) => arr.indexOf(ele) === index);
   };
   const fl = filtered(carMake);
-  const carFiltered = fl.map((cars) => <option>{cars}</option>);
+  const carFiltered = fl.map((cars) => <option className="option">{cars}</option>);
 
   // CAR YEAR
   const carYear = cars.map((car) => car.year);
   const filteredYear = filtered(carYear);
-  const yearFiltered = filteredYear.map((cars) => <option>{cars}</option>);
+  const yearFiltered = filteredYear.map((cars) => <option className="option">{cars}</option>);
 
   //rendering Car component when submit button is clicked
   const clickHandler = function () {
@@ -72,6 +72,7 @@ function CarSearch() {
             clickHandler();
           }}
           ><BiSearch/>  Search
+          
         </Button>
       </div>
       <div id="car-details"></div>
