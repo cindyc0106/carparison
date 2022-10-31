@@ -32,22 +32,15 @@ function CarSearch() {
 
   // CAR MODELs
 
-  const filteredCarModels = function() {
-    // console.log('flmake', flmake)
-    const array = [];
+  const filteredCarModels = function(make) {
     const modelsArr = cars.filter(car => car.make === make); // array of objects with current make state
-    console.log('modelsArr', modelsArr);
     const carModels = modelsArr.map((car) => car.model); // array of car modelss with that specific make
-    console.log('carModels', carModels);
     return carModels;
   };
 
   if (make) {
     filteredCarModels();
   }
-  console.log('make', make);
-  console.log('models', models);
-  // console.log('setModels', setModels)
   return (
     <div>
       <FormControl>
@@ -68,8 +61,7 @@ function CarSearch() {
           onChange={(e) => {
             setModels(e.target.value);
           }}>
-          {/* {filteredCarMakes && filteredCarMakes.map((c, key) => <option key={key}>{c.model}</option>)} */}
-          {cars.map((c, key) => <option key={key}>{c.model}</option>)}
+          {filteredCarModels(make).map((model, key) => <option key={key}>{model}</option>)}
         </Select>
       </FormControl>
 
