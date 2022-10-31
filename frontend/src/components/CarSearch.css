@@ -1,0 +1,15 @@
+#car-form {
+  display: flex;
+  justify-content: space-around;
+}
+
+.chakra-form-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.chakra-select__wrapper {
+  border-color:white white #A9B4A4 white
+}

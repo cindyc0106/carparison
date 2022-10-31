@@ -4,11 +4,11 @@ import {
   BreadcrumbLink,
   Input,
   Button,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 import { FaSearch, FaRegTimesCircle } from "react-icons/fa";
-import { useState } from 'react';
+import { useState } from "react";
 import axios from "axios";
-import './Navigator.css';
+import "./Navigator.css";
 
 function Navigator() {
   const [query, setQuery] = useState([]);
@@ -24,7 +24,11 @@ function Navigator() {
         console.log(data.data);
         data = data.data;
         const newCar = data.filter((value) => {
-          return (value.make.toLowerCase().includes(searchCar.toLowerCase())) || (value.model.toLowerCase().includes(searchCar.toLowerCase()) || (value.year.toString().includes(searchCar)));
+          return (
+            value.make.toLowerCase().includes(searchCar.toLowerCase()) ||
+            value.model.toLowerCase().includes(searchCar.toLowerCase()) ||
+            value.year.toString().includes(searchCar)
+          );
         });
         if (searchCar === "") {
           setQuery([]);
@@ -42,28 +46,49 @@ function Navigator() {
 
   return (
     <nav>
-      <div className='nav'>
-        <h1><img alt="" src="logo1.jpeg" className="logo"/></h1>
-        <form className='form'>
-          <div className='searchBar'>
-
-            <Input type='text' placeholder='Search for your car...' size='xs' value={search} onChange={handleSearch} />
-            <div className='icon'>
-              {!query.length ? <FaSearch /> : <FaRegTimesCircle id='clearBtn' onClick={clearInput} />}
+      <div className="nav">
+        <h1>
+          <img alt="" src="logo1.jpeg" className="logo" />
+        </h1>
+        <form className="form">
+          <div className="searchBar">
+            <Input
+              type="search"
+              placeholder="Search for your car..."
+              size="xs"
+              value={search}
+              onChange={handleSearch}
+            />
+            <div>
+              {!query.length ? (
+                <FaSearch />
+              ) : (
+                <FaRegTimesCircle id="clearBtn" onClick={clearInput} />
+              )}
             </div>
           </div>
-          {query.length !== 0 &&
-            <div className='carSearch'>
+          {query.length !== 0 && (
+            <div className="carSearch">
               {query.map((value, key) => {
                 return (
-                  <div className='carResults' key={key}>
-                    <a>{value.make} {value.model} {value.year} </a>
-                  </div>);
+                  <div className="carResults" key={key}>
+                    <a>
+                      {value.make} {value.model} {value.year}{" "}
+                    </a>
+                  </div>
+                );
               })}
             </div>
-          }
-          <div className='searchButton'>
-            <Button colorScheme='teal' variant='outline' size='xs'>Submit</Button>
+          )}
+          <div className="searchButton">
+            <Button
+              display="none"
+              colorScheme="teal"
+              variant="outline"
+              size="xs"
+            >
+              Submit
+            </Button>
             {/* <Button isLoading
             loadingText='Loading'
             colorScheme='teal'
@@ -74,26 +99,21 @@ function Navigator() {
           </div>
         </form>
 
-
-
-
-        <Breadcrumb separator='-'>
+        <Breadcrumb separator="-">
           <BreadcrumbItem>
-            <BreadcrumbLink href='#'>Home</BreadcrumbLink>
+            <BreadcrumbLink href="#">Home</BreadcrumbLink>
           </BreadcrumbItem>
 
           <BreadcrumbItem>
-            <BreadcrumbLink href='#'>About</BreadcrumbLink>
+            <BreadcrumbLink href="#">About</BreadcrumbLink>
           </BreadcrumbItem>
 
           <BreadcrumbItem isCurrentPage>
-            <BreadcrumbLink href='#'>Contact</BreadcrumbLink>
+            <BreadcrumbLink href="#">Contact</BreadcrumbLink>
           </BreadcrumbItem>
         </Breadcrumb>
-
       </div>
     </nav>
-
   );
 }
 

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Router, Routes, Route } from "react-router-dom";
+// import { Router, Routes, Route } from "react-router-dom";
 import * as ReactDOM from "react-dom";
 import axios from "axios";
 import Car from "./Car";
 import { FormControl, FormLabel, Select, Button } from "@chakra-ui/react";
+import "./CarSearch.css";
 
 function CarSearch() {
   const [cars, setCars] = useState([]);
@@ -27,11 +28,9 @@ function CarSearch() {
   const fl = filtered(carMake);
   const carFiltered = fl.map((cars) => <option>{cars}</option>);
 
-
-
   // CAR YEAR
-  const carYear = cars.map((car) => car.year)
-  const filteredYear = filtered(carYear)
+  const carYear = cars.map((car) => car.year);
+  const filteredYear = filtered(carYear);
   const yearFiltered = filteredYear.map((cars) => <option>{cars}</option>);
 
   //rendering Car component when submit button is clicked
@@ -42,7 +41,7 @@ function CarSearch() {
 
   return (
     <div>
-      <div id="car-form" style={{ display: carForm ? "block" : "none" }}>
+      <div id="car-form" style={{ display: carForm ? "flex" : "none" }}>
         <FormControl>
           <FormLabel>Make</FormLabel>
           <Select placeholder="Select Make">{carFiltered}</Select>
@@ -59,10 +58,11 @@ function CarSearch() {
 
         <FormControl>
           <FormLabel>Year</FormLabel>
-          <Select placeholder="Select Year">
-            {yearFiltered}
-          </Select>
+          <Select placeholder="Select Year">{yearFiltered}</Select>
         </FormControl>
+        <br />
+      </div>
+      <div>
         <Button
           colorScheme="teal"
           variant="outline"
@@ -70,8 +70,7 @@ function CarSearch() {
           onClick={() => {
             clickHandler();
           }}
-        >
-          Submit
+          >Search
         </Button>
       </div>
       <div id="car-details"></div>

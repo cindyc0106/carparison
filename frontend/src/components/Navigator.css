@@ -2,11 +2,16 @@
   display: flex;
   justify-content: space-between;
   margin: 15px 15px 100px 15px;
+  background-color: #A9B4A4;
 
+}
+svg {
+  display: none
 }
 
 .carSearch {
-  margin-top: 30px;
+  margin-right: 66px;
+  margin-top: 63px;
   width: 170px;
   height: 50px;
   background-color: white;
@@ -25,15 +30,23 @@
   align-items: center;
   padding-left: 5px;
   font-size: small;
+
 }
 .carSearch .carResults:hover {
-  background-color: lightgray;
+  background-color: #A9B4A4;
 }
 
 .searchBar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-color: #A9B4A4;
+}
+
+.searchButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .form {
@@ -46,5 +59,14 @@
 .logo {
   width: 100px;
    height: 100px;
+}
 
+.chakra-input {
+  width: 170px  !important;
+  margin-right: 50px
+}
+
+.chakra-breadcrumb {
+  display: flex;
+  margin-right: 30px;
 }
