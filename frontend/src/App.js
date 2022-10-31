@@ -1,9 +1,9 @@
 import "./App.css";
 import Navigator from "./components/Navigator";
-// import Review from "./components/Review";
+import Review from "./components/Review";
 import { ChakraProvider } from "@chakra-ui/react";
 import CarSearch from "./components/CarSearch";
-// import Car from "./components/Car";
+import PastReviewList from "./components/PastReviewList";
 
 function App() {  
   return (
@@ -12,8 +12,9 @@ function App() {
 
         <Navigator />
         <CarSearch />
-        {/* <Car/> */}
-    {/* <Review /> */}
+
+    <Review />  <PastReviewList />
+        
       </div>
     </ChakraProvider>
   );
