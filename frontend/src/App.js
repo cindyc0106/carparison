@@ -13,7 +13,7 @@ function App() {
         <Navigator />
         <CarSearch />
 
-    {/* <Review />  <PastReviewList />*/}
+    {/* <Review /> <PastReviewList id={}/> */}
         
       </div>
     </ChakraProvider>
