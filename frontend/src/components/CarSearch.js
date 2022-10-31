@@ -27,14 +27,14 @@ function CarSearch() {
   const fl = filtered(carMake);
   const carFiltered = fl.map((cars) => <option>{cars}</option>);
 
-  // CAR MODEL
 
-  // const filterDistinct = function (item, index) {
-  //   const result = cars.filter((item2, index) => {
-  //     return item2 !== item;
-  //   })
-  // };
 
+  // CAR YEAR
+  const carYear = cars.map((car) => car.year)
+  const filteredYear = filtered(carYear)
+  const yearFiltered = filteredYear.map((cars) => <option>{cars}</option>);
+
+  //rendering Car component when submit button is clicked
   const clickHandler = function () {
     setCarForm(false);
     ReactDOM.render(<Car />, document.querySelector("#car-details"));
@@ -60,9 +60,7 @@ function CarSearch() {
         <FormControl>
           <FormLabel>Year</FormLabel>
           <Select placeholder="Select Year">
-            {cars.map((c, key) => (
-              <option key={key}>{c.year}</option>
-            ))}
+            {yearFiltered}
           </Select>
         </FormControl>
         <Button
