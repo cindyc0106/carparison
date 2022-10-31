@@ -26,11 +26,47 @@
 }
 
 .chakra-button {
-   position: relative;
+  position: relative;
   z-index: 1;
   height: 35px !important ;
   font-size: 15px !important;
-  background-color: #A9B4A4 !important;
-  color: #F2F1EF !important
+  background-color: #a9b4a400 !important;
+  color: #504F4C !important;
+  border-color: #504f4c00!important;
 }
 
+.animated-border-button {
+  background-color: #504F4C;
+  border: none;
+  color: #A9B4A4;
+  outline: none;
+  padding: 12px 40px 10px;
+  position: relative;
+}
+
+.animated-border-button:before,
+.animated-border-button:after {
+  border: 0 solid transparent;
+  transition: all 0.3s;
+  content: '';
+  height: 0;
+  position: absolute;
+  width: 24px;
+}
+
+.animated-border-button:before {
+  border-top: 2px solid #504F4C;
+  right: 0;
+  top: -4px;
+}
+
+.animated-border-button:after {
+  border-bottom: 2px solid #504F4C;
+  bottom: -4px;
+  left: 0;
+}
+
+.animated-border-button:hover:before,
+.animated-border-button:hover:after {
+  width: 100%;
+}

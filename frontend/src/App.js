@@ -18,16 +18,15 @@ requestAnimationFrame(draw);
   return (
     <ChakraProvider>
    <Navigator />  
-      <div className="background">      </div>
-      <div className="foreground"> </div>
-      <div className="App">
-
-        
+    <span className="App">
       <CarSearch />
 
     {/* <Review /> <PastReviewList id={}/> */}
         
-      </div>
+    </span>
+      <span className="background"></span>
+      <span className="foreground"></span>
+     
     </ChakraProvider>
   );
 }

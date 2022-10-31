@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 import "./Car.css";
 
+
 function Car() {
   const [cars, setCars] = useState([])
   
@@ -18,24 +19,31 @@ function Car() {
 
   const carData = cars.map((car, index) => {
     return (
-      <div key={index}>
-        <h2>make: {car.make}</h2>
-        <h2>model: {car.model}</h2>
-        <h2>class: {car.class}</h2>
-        <h2>year: {car.year}</h2>
-        <div className="photo">photo: <img alt="" width={200} height={200} src={car.photo_url}/></div>
+      <>
+      <div className="car-container">
+      <div className="photo">photo: <img alt="" width={200} height={200} src={car.photo_url}/></div>
+      <div className="carDetails" key={index}>
+      <span className="car-text"><strong><font size="+2">Vehicle Information</font></strong></span>
+      <span>__________________________</span>
+        <h2 className="make">Make: <strong>{car.make}</strong></h2>
+        <h2 className="model">Model: <strong>{car.model}</strong></h2>
+        <h2 className="class">Class: <strong>{car.class}</strong></h2>
+        <h2 className="year">Year: <strong>{car.year}</strong></h2>
+        </div>
         <hr />
       </div>
+        
+        </>
     );
   })
     // axios.get("/api/cars"),
     // axios.get("/api/reviews")
 
   return (
-    <h1> This is the Car 
-    <ol>
+    <h1 className="car-details">  
+    <ul >
       <li key={cars.id}>{carData}</li>
-    </ol>
+    </ul>
     
     </h1>
   );
