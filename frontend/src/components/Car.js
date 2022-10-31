@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import "./Car.css";
-
+import Review from "./Review";
+import PastReviewList from "./PastReviewList";
 
 function Car() {
   const [cars, setCars] = useState([])
@@ -21,7 +22,7 @@ function Car() {
     return (
       <>
       <div className="car-container">
-      <div className="photo">photo: <img alt="" width={200} height={200} src={car.photo_url}/></div>
+      <div className="photo"> <img alt="" width={200} height={200} src={car.photo_url}/></div>
       <div className="carDetails" key={index}>
       <span className="car-text"><strong><font size="+2">Vehicle Information</font></strong></span>
       <span>__________________________</span>
@@ -44,7 +45,8 @@ function Car() {
     <ul >
       <li key={cars.id}>{carData}</li>
     </ul>
-    
+    {<Review/>}
+    (<PastReviewList/>)
     </h1>
   );
 }

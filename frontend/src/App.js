@@ -4,7 +4,6 @@ import Review from "./components/Review";
 import { ChakraProvider } from "@chakra-ui/react";
 import CarSearch from "./components/CarSearch";
 import PastReviewList from "./components/PastReviewList";
-
 function App() {  
 
   //background image rotation
@@ -20,8 +19,8 @@ requestAnimationFrame(draw);
    <Navigator />  
     <span className="App">
       <CarSearch />
-
-    {/* <Review /> <PastReviewList id={}/> */}
+    <Review /> 
+    {/* <PastReviewList id={}/> */}
         
     </span>
       <span className="background"></span>

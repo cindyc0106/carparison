@@ -6,6 +6,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 4 !important;
+  opacity: 1 ;
 }
 
 input[type="radio"] {
