@@ -1,4 +1,43 @@
 .photo {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-right: 25px;
+
+}
+.car-details {
+  margin: 25px;
+  position: relative;
+  z-index: 4;
+  opacity: 1 ;
+  size:25px;
+
+}
+
+li {
+  display: list-item;
+  list-style: none
+}
+
+.carDetails {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.car-container {
+  display: flex;
+
+}
+
+.car-text {
+  margin-bottom: -20px;
+}
+
+.model, .year {
+background-color: #F2F1EF;
+border-radius: 5px;
+padding-left: 4px;
+}
+.make, .class {
+  padding-left: 4px;
 }
