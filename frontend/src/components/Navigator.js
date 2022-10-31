@@ -21,7 +21,7 @@ function Navigator() {
       .get("http://localhost:3001/cars")
       .then((res) => JSON.parse(JSON.stringify(res)))
       .then((data) => {
-        console.log(data.data);
+        // console.log(data.data);
         data = data.data;
         const newCar = data.filter((value) => {
           return (

@@ -17,13 +17,13 @@ function draw(){
 requestAnimationFrame(draw);
   return (
     <ChakraProvider>
-   
-      <div className="background">   <Navigator />     <CarSearch /></div>
+   <Navigator />  
+      <div className="background">      </div>
       <div className="foreground"> </div>
       <div className="App">
 
         
-   
+      <CarSearch />
 
     {/* <Review /> <PastReviewList id={}/> */}
         
