@@ -1,6 +1,9 @@
 #car-form {
   display: flex;
   justify-content: space-around;
+  position: relative;
+  z-index: 1;
+  opacity: 1 ;
 }
 
 .chakra-form-control {
@@ -11,5 +14,22 @@
 }
 
 .chakra-select__wrapper {
-  border-color:white white #A9B4A4 white
+  
+  border-color:rgba(255, 255, 255, 0) rgba(255, 255, 255, 0) #A9B4A4 rgba(255, 255, 255, 0)
+}
+
+.button-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+ 
+}
+
+.chakra-button {
+   position: relative;
+  z-index: 1;
+  height: 35px !important ;
+  font-size: 15px !important;
+  background-color: #A9B4A4 !important;
+  color: #F2F1EF !important
 }

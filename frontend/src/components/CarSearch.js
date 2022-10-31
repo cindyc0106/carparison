@@ -5,6 +5,7 @@ import axios from "axios";
 import Car from "./Car";
 import { FormControl, FormLabel, Select, Button } from "@chakra-ui/react";
 import "./CarSearch.css";
+import { BiSearch } from "react-icons/bi";
 
 function CarSearch() {
   const [cars, setCars] = useState([]);
@@ -40,7 +41,7 @@ function CarSearch() {
   };
 
   return (
-    <div>
+  <div>
       <div id="car-form" style={{ display: carForm ? "flex" : "none" }}>
         <FormControl>
           <FormLabel>Make</FormLabel>
@@ -62,7 +63,7 @@ function CarSearch() {
         </FormControl>
         <br />
       </div>
-      <div>
+      <div className="button-div">
         <Button
           colorScheme="teal"
           variant="outline"
@@ -70,10 +71,11 @@ function CarSearch() {
           onClick={() => {
             clickHandler();
           }}
-          >Search
+          ><BiSearch/>  Search
         </Button>
       </div>
       <div id="car-details"></div>
+   
     </div>
   );
 }

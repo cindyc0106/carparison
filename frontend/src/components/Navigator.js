@@ -48,7 +48,7 @@ function Navigator() {
     <nav>
       <div className="nav">
         <h1>
-          <img alt="" src="logo1.jpeg" className="logo" />
+          <img alt="" src="logo1.png" className="logo" />
         </h1>
         <form className="form">
           <div className="searchBar">
