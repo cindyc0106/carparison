@@ -8,7 +8,7 @@ import {
 
 function CarSearch() {
   const [make, setMake] = useState('');
-  const [model, setModel] = useState([]);
+  const [models, setModels] = useState([]);
   // const [year, setYear] = useState([]);
 
   const [cars, setCars] = useState([]);
@@ -28,36 +28,26 @@ function CarSearch() {
     return arr.filter((ele, index) => arr.indexOf(ele) === index);
   };
   const flmake = filteredMake(carMake);
-  const filteredCarMake = flmake.map((cars, key) => <option key={key}>{cars}</option>);
+  const filteredCarMakes = flmake.map((cars, key) => <option key={key}>{cars}</option>);
 
-  // CAR MODEL
-  
-  //  console.log(flmodel)
-  // console.log('carModel', carModel);
-  // function isAcura() {
-  //   return;
-  // }
-  const filteredCarModel = function(arr) {
+  // CAR MODELs
+
+  const filteredCarModels = function() {
     // console.log('flmake', flmake)
     const array = [];
-    const modelArr = cars.filter(car => car.make === make) // array of objects with current make state
-    console.log('modelArr', modelArr)
-    const carModel = modelArr.map((car) => car.model); // array of car models with that specific make
-
-    console.log('carModel', carModel)
-
-    // if (cars.filter(car => car.make === 'Acura')) {
-    //   // array.push(car);
-    //   // console.log('cars', cars);
-    // }
+    const modelsArr = cars.filter(car => car.make === make); // array of objects with current make state
+    console.log('modelsArr', modelsArr);
+    const carModels = modelsArr.map((car) => car.model); // array of car modelss with that specific make
+    console.log('carModels', carModels);
+    return carModels;
   };
 
   if (make) {
-    filteredCarModel();
+    filteredCarModels();
   }
   console.log('make', make);
-  console.log('model', model)
-  // console.log('setModel', setModel)
+  console.log('models', models);
+  // console.log('setModels', setModels)
   return (
     <div>
       <FormControl>
@@ -67,7 +57,7 @@ function CarSearch() {
           onChange={(e) => {
             setMake(e.target.value);
           }}>
-          {filteredCarMake}
+          {filteredCarMakes}
         </Select>
       </FormControl>
 
@@ -76,8 +66,9 @@ function CarSearch() {
         <Select
           placeholder="Select Model"
           onChange={(e) => {
-            setModel(e.target.value);
+            setModels(e.target.value);
           }}>
+          {/* {filteredCarMakes && filteredCarMakes.map((c, key) => <option key={key}>{c.model}</option>)} */}
           {cars.map((c, key) => <option key={key}>{c.model}</option>)}
         </Select>
       </FormControl>
