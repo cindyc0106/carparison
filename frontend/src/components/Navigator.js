@@ -1,14 +1,14 @@
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   Input,
   Button,
 } from "@chakra-ui/react";
-import { FaSearch, FaRegTimesCircle } from "react-icons/fa";
+// import { FaSearch, FaRegTimesCircle } from "react-icons/fa";
 import { useState } from "react";
 import axios from "axios";
 import "./Navigator.css";
+import { Link } from "react-router-dom";
 
 function Navigator() {
   const [query, setQuery] = useState([]);
@@ -39,10 +39,10 @@ function Navigator() {
   };
 
   // add clear button for input field
-  const clearInput = () => {
-    setQuery("");
-    setSearch("");
-  };
+  // const clearInput = () => {
+  //   setQuery("");
+  //   setSearch("");
+  // };
 
   return (
     <nav>
@@ -60,11 +60,11 @@ function Navigator() {
               onChange={handleSearch}
             />
             <div>
-              {!query.length ? (
+              {/* {!query.length ? (
                 <FaSearch />
               ) : (
                 <FaRegTimesCircle id="clearBtn" onClick={clearInput} />
-              )}
+              )} */}
             </div>
           </div>
           {query.length !== 0 && (
@@ -101,15 +101,15 @@ function Navigator() {
 
         <Breadcrumb separator="-">
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">Home</BreadcrumbLink>
+            <Link to="/">Home</Link>
           </BreadcrumbItem>
 
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">About</BreadcrumbLink>
+            <Link to="/about">About</Link>
           </BreadcrumbItem>
 
           <BreadcrumbItem isCurrentPage>
-            <BreadcrumbLink href="#">Contact</BreadcrumbLink>
+            <Link to="/contact">Contact</Link>
           </BreadcrumbItem>
         </Breadcrumb>
       </div>

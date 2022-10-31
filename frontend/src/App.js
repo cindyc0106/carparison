@@ -1,32 +1,45 @@
 import "./App.css";
 import Navigator from "./components/Navigator";
-import Review from "./components/Review";
+// import Review from "./components/Review";
 import { ChakraProvider } from "@chakra-ui/react";
 import CarSearch from "./components/CarSearch";
-import PastReviewList from "./components/PastReviewList";
+// import PastReviewList from "./components/PastReviewList";
 
-function App() {  
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+
+import { Route, Routes } from "react-router-dom";
+
+function App() {
 
   //background image rotation
-let c = 45;
-function draw(){
-  document.documentElement.style.setProperty('--direction', c++ + 'deg');
-  requestAnimationFrame(draw);
-}
+  // let c = 45;
+  // function draw() {
+  //   document.documentElement.style.setProperty('--direction', c++ + 'deg');
+  //   requestAnimationFrame(draw);
+  // }
 
-requestAnimationFrame(draw);
+  // requestAnimationFrame(draw);
   return (
     <ChakraProvider>
-   <Navigator />  
-      <div className="background">      </div>
-      <div className="foreground"> </div>
+      {/* <div className="background">      </div>
+      <div className="foreground"> </div> */}
       <div className="App">
+      <Navigator />
 
-        
-      <CarSearch />
+        <CarSearch />
 
-    {/* <Review /> <PastReviewList id={}/> */}
-        
+        {/* <Review /> <PastReviewList id={}/> */}
+
+
+        {/* Routing */}
+
+        <Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+
+
       </div>
     </ChakraProvider>
   );
