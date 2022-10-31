@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 // import Review from "./components/Review";
-// import PastReviewList from "./components/PastReviewList.js";
+// import PastReviewList from "./components/PastReviewList";
 import "./Car.css";
 
 
@@ -46,8 +46,8 @@ export default function Car() {
     <ul >
       <li key={cars.id}>{carData}</li>
       </ul>
-    {/* {<Review/>}
-    (<PastReviewList/>) */}
+
+
     
     </h1>
   );
