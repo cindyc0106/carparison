@@ -65,7 +65,7 @@ function PastReviewList(props) {
     const nonStar = nonStars(rating);
     const user = getUserById(users, review.user_id )
     return (
-      <Box maxW='sm' key={index} borderWidth="1px" borderRadius="lg" >
+      <Box maxW='lg' key={index} borderWidth="1px" borderRadius="lg" >
         <Heading fontSize={20} display='flex' flexDirection='row' p={2} justifyContent='space-between' bg='teal.100'>
           <div><Avatar boxSize='1.25em'/> {user.name}</div>
           <Flex direction='row'>{star}{nonStar}</Flex>
@@ -77,14 +77,17 @@ function PastReviewList(props) {
     );
   })
   return (
+    <div className="review">
+
     <h1> This is the PastReviewList 
-      <Box maxW='sm' maxH='sm' overflow='scroll' borderWidth="1px" >
+      <Box maxW='lg' maxH='lg' overflow='scroll' borderWidth="1px" >
         <List >
           <ListItem key={reviews.id} >{show}</ListItem>
         </List>
       </Box>
       
     </h1>
+    </div>
   );
   }
   

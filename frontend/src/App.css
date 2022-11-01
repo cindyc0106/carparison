@@ -21,7 +21,7 @@ main {
   background-size: cover;
   background-repeat: none;
   background-color: white;
-  z-index: 0;
+  z-index: -10;
   /* opacity: 0 */
 }
 
@@ -37,6 +37,6 @@ main {
   background-size: cover;
   background-repeat: none;
   background-color: white;
-  z-index: 0;
+  z-index: -10;
   /* opacity: 0 */
 }

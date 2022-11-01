@@ -1,0 +1,7 @@
+.contact {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  z-index: 4;
+  opacity: 1 ;
+}

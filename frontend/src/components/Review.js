@@ -17,14 +17,13 @@ function Review() {
     //giving the radio input a value for each star
     const value = index + 1;
     return (
-      <label>
+      <label key={index}>
         <input 
           type="radio" 
           value={value} 
           onClick={() => setRating(value)}
         />
           <FaStar 
-            key={index}
             size={25} 
             className="pointer" 
             // have the yellow color take effect when hovered, or else is grey
