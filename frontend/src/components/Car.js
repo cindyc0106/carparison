@@ -1,13 +1,13 @@
 import { useState, useEffect, useContext } from "react";
 import axios from 'axios';
 import "./Car.css";
-// import { SelectedCarContext } from "./CarSearch";
+import { SelectedCarContext } from "../Context/SelectedCarContext";
 
 function Car() {
   const [cars, setCars] = useState([]);
+  const { make, models, setMake, setModels } = useContext(SelectedCarContext);
 
   useEffect(() => {
-
     axios
       .get("http://localhost:3001/cars")
       .then((res) => JSON.parse(JSON.stringify(res)))
@@ -32,18 +32,20 @@ function Car() {
   // axios.get("/api/cars"),
   // axios.get("/api/reviews")
 
-  // console.log('cars', cars)
+  // console.log('cars', cars);
+  console.log('make in car', make);
+  console.log('models in car', models);
   return (
     <div className="car">
+      <SelectedCarContext.Provider value={cars}>
+        <h1> This is the Car
+          <div>
+            <a key={cars.id}>{carData}</a>
+          </div>
+        </h1>
+      </SelectedCarContext.Provider>
+    </div>
 
-      <h1> This is the Car
-        <div>
-          <a key={cars.id}>{carData}</a>
-        </div>
-      </h1>
-    </div> 
-
-    
 
   );
 }

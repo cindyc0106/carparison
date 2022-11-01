@@ -1,5 +1,5 @@
-import React, { useState, useEffect, createContext, useContext } from "react";
-// import { Router, Routes, Route } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import * as ReactDOM from "react-dom";
 import axios from "axios";
 import Car from "./Car";
@@ -19,12 +19,15 @@ function CarSearch() {
     setMake,
     setModels
   } = useContext(SelectedCarContext)
-  console.log('make', make)
 
   const [cars, setCars] = useState([]);
-  const [carForm, setCarForm] = useState(true);
+  // const [carForm, setCarForm] = useState(true);
 
+  const navigate = useNavigate()
 
+  // console.log('cars', cars);
+  console.log('make in search', make);
+  console.log('models in search', models);
   useEffect(() => {
     axios
       .get("http://localhost:3001/cars")
@@ -57,10 +60,10 @@ function CarSearch() {
   const yearFiltered = filteredYear.map((cars, key) => <option key={key} className="option">{cars}</option>);
 
   //rendering Car component when submit button is clicked
-  const clickHandler = function() {
-    setCarForm(false);
-    ReactDOM.render(<Car />, document.querySelector("#car-details"));
-  };
+  // const clickHandler = function() {
+  //   setCarForm(false);
+  //   ReactDOM.render(<Car />, document.querySelector("#car-details"));
+  // };
 
   if (make) {
     filteredCarModels();
@@ -68,7 +71,8 @@ function CarSearch() {
   return (
     <>
       <SelectedCarContext.Provider value={cars}>
-        <div id="car-form" style={{ display: carForm ? "flex" : "none" }}>
+        {/* <div id="car-form" style={{ display: carForm ? "flex" : "none" }}> */}
+        <div id="car-form" >
           <FormControl>
             <FormLabel>Make</FormLabel>
             <Select
@@ -97,13 +101,14 @@ function CarSearch() {
           </FormControl>
           <br />
         </div>
-        <div className="button-div" style={{ display: carForm ? "flex" : "none" }}>
+        {/* <div className="button-div" style={{ display: carForm ? "flex" : "none" }}> */}
+        <div className="button-div">
           <Button
             colorScheme="teal"
             variant="outline"
             size="xs"
             onClick={() => {
-              clickHandler();
+              navigate(`/car/${make}/${models}`);
             }}
           ><BiSearch />  Search
 

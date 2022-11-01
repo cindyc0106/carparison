@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-const SelectedCarContext = createContext();
+const SelectedCarContext = createContext('');
 
 
 function CarContextProvider({ children }) {

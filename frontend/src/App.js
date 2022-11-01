@@ -4,6 +4,7 @@ import Review from "./components/Review";
 import { ChakraProvider } from "@chakra-ui/react";
 import CarSearch from "./components/CarSearch";
 import PastReviewList from "./components/PastReviewList";
+import Car from "./components/Car";
 
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -36,6 +37,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<CarSearch />} />
+          <Route path="/car/:make/:model" element={<Car />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/review" element={<Review />} />
