@@ -6,7 +6,6 @@ const axios = require("axios");
 require('dotenv').config();
 
 
-// (db) => {
   router.get('/', (req, res) => {
 
     return db.query(
@@ -28,7 +27,7 @@ require('dotenv').config();
      const options = {
       method: 'GET',
       url: 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars',
-      params: {make: `${req.params.make}`, model: `${req.params.model}`, year: `${req.params.year}`},
+      params: {make: `${req.params.make.toLowerCase()}`, model: `${req.params.model.toLowerCase()}`, year: `${req.params.year}`},
       headers: {
         'X-RapidAPI-Key': `${process.env.API_KEY}`,
         'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
@@ -44,6 +43,6 @@ require('dotenv').config();
     });
 
   })
-// }
+
 
 module.exports = router;
