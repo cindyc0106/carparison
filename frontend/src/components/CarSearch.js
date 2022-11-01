@@ -17,7 +17,9 @@ function CarSearch() {
     setMake,
     setModels,
     year,
-    setYear
+    setYear,
+    car,
+    setCar
   } = useContext(SelectedCarContext)
 
   const [cars, setCars] = useState([]);
@@ -60,7 +62,10 @@ function CarSearch() {
     navigate(`/cars/${make}/${models}/${year}`)
     axios
       .get(`http://localhost:3001/cars/${make}/${models}/${year}`)
-      .then((res) => console.log("res:", res))
+      .then((res) => {
+        setCar(res.data)
+
+      })
       .catch((err)=> console.log("error:", err))
   }
 

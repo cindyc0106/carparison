@@ -9,6 +9,7 @@
 .car-detail {
   display: flex;
   align-items: left;
+  justify-content: space-between;
 }
 
 h2 {
@@ -57,3 +58,4 @@ padding-left: 4px;
 .make, .class {
   padding-left: 4px;
 }
+
