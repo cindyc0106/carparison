@@ -25,9 +25,6 @@ function CarSearch() {
 
   const navigate = useNavigate()
 
-  // console.log('cars', cars);
-  console.log('make in search', make);
-  console.log('models in search', models);
   useEffect(() => {
     axios
       .get("http://localhost:3001/cars")
@@ -46,8 +43,7 @@ function CarSearch() {
   const flmake = filteredMake(carMake);
   const filteredCarMakes = flmake.map((cars, key) => <option key={key}>{cars}</option>);
 
-  // CAR MODELs
-
+  // CAR MODEL
   const filteredCarModels = function(make) {
     const modelsArr = cars.filter(car => car.make === make); // array of objects with current make state
     const carModels = modelsArr.map((car) => car.model); // array of car modelss with that specific make
