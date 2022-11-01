@@ -10,7 +10,7 @@ body {
 main {
   position: relative;
 }
-
+/* 
 .background {
   background-image: url(https://i.ibb.co/StN4NtT/Car1.png);
   position: absolute;
@@ -22,7 +22,7 @@ main {
   background-repeat: none;
   background-color: white;
   z-index: -10;
-  /* opacity: 0 */
+
 }
 
 .foreground {
@@ -38,5 +38,5 @@ main {
   background-repeat: none;
   background-color: white;
   z-index: -10;
-  /* opacity: 0 */
-}
+
+} */

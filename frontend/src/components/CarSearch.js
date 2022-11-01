@@ -10,18 +10,18 @@ import { BiSearch } from "react-icons/bi";
 import { SelectedCarContext } from "../Context/SelectedCarContext";
 
 function CarSearch() {
-  // const [make, setMake] = useState('');
-  // const [models, setModels] = useState([]);
-  // const [year, setYear] = useState([]);
+
   const {
     make,
     models,
     setMake,
-    setModels
+    setModels,
+    year,
+    setYear
   } = useContext(SelectedCarContext)
 
   const [cars, setCars] = useState([]);
-  // const [carForm, setCarForm] = useState(true);
+
 
   const navigate = useNavigate()
 
@@ -55,11 +55,14 @@ function CarSearch() {
   const filteredYear = filteredMake(carYear);
   const yearFiltered = filteredYear.map((cars, key) => <option key={key} className="option">{cars}</option>);
 
-  //rendering Car component when submit button is clicked
-  // const clickHandler = function() {
-  //   setCarForm(false);
-  //   ReactDOM.render(<Car />, document.querySelector("#car-details"));
-  // };
+
+  const clickHandler = function() {
+    navigate(`/cars/${make}/${models}/${year}`)
+    axios
+      .get(`http://localhost:3001/cars/${make}/${models}/${year}`)
+      .then((res) => console.log("res:", res))
+      .catch((err)=> console.log("error:", err))
+  }
 
   if (make) {
     filteredCarModels();
@@ -93,7 +96,9 @@ function CarSearch() {
 
           <FormControl>
             <FormLabel>Year</FormLabel>
-            <Select placeholder="Select Year">{yearFiltered}</Select>
+            <Select placeholder="Select Year" onChange={(e) => {
+                setYear(e.target.value);
+              }}>{yearFiltered}</Select>
           </FormControl>
           <br />
         </div>
@@ -103,9 +108,7 @@ function CarSearch() {
             colorScheme="teal"
             variant="outline"
             size="xs"
-            onClick={() => {
-              navigate(`/car/${make}/${models}`);
-            }}
+            onClick={() => {clickHandler()}}
           ><BiSearch />  Search
 
           </Button>
