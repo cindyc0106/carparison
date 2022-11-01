@@ -71,11 +71,11 @@ function Navigator() {
             <div className="carSearch">
               {query.map((value, key) => {
                 return (
-                  <div className="carResults" key={key}>
+                  <span className="carResults" key={key}>
                     <a>
                       {value.make} {value.model} {value.year}{" "}
                     </a>
-                  </div>
+                  </span>
                 );
               })}
             </div>

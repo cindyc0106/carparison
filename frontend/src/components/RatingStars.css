@@ -5,7 +5,8 @@
 .stars {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
+  border: red solid 1px;
 }
 
 input[type="radio"] {

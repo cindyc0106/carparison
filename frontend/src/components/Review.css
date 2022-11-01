@@ -1,4 +1,6 @@
 .form {
   display: flex;
   justify-content: center;
+  position: relative;
+  z-index: 3
 }
