@@ -10,9 +10,7 @@ import { BiSearch } from "react-icons/bi";
 import { SelectedCarContext } from "../Context/SelectedCarContext";
 
 function CarSearch() {
-  // const [make, setMake] = useState('');
-  // const [models, setModels] = useState([]);
-  // const [year, setYear] = useState([]);
+
   const {
     make,
     models,
@@ -23,7 +21,7 @@ function CarSearch() {
   } = useContext(SelectedCarContext)
 
   const [cars, setCars] = useState([]);
-  // const [carForm, setCarForm] = useState(true);
+
 
   const navigate = useNavigate()
 
