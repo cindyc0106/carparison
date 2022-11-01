@@ -7,12 +7,15 @@ function CarContextProvider({ children }) {
 
   const [make, setMake] = useState('');
   const [models, setModels] = useState([]);
+  const [year, setYear] = useState('');
 
   const value = {
     make,
     models,
     setMake,
-    setModels
+    setModels,
+    year,
+    setYear
   }
 
   return <SelectedCarContext.Provider value={value}>

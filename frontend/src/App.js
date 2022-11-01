@@ -16,13 +16,13 @@ import { CarContextProvider } from "./Context/SelectedCarContext";
 function App() {
 
   //background image rotation
-  let c = 45;
-  function draw() {
-    document.documentElement.style.setProperty('--direction', c++ + 'deg');
-    requestAnimationFrame(draw);
-  }
+  // let c = 45;
+  // function draw() {
+  //   document.documentElement.style.setProperty('--direction', c++ + 'deg');
+  //   requestAnimationFrame(draw);
+  // }
 
-  requestAnimationFrame(draw);
+  // requestAnimationFrame(draw);
   return (
     <ChakraProvider>
       <CarContextProvider>
@@ -37,7 +37,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<CarSearch />} />
-          <Route path="/car/:make/:model" element={<Car />} />
+          <Route path="/cars/:make/:model/:year" element={<Car />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/review" element={<Review />} />

@@ -60,12 +60,12 @@ function Car() {
     }
   });
 
-  console.log('id', idGet(getID))
+  // console.log('id', idGet(getID))
   //console.log('id', car.id)
-  console.log('cars', cars);
-  console.log('cardata', carData);
-  console.log('make', make);
-  console.log('models', models);
+  // console.log('cars', cars);
+  // console.log('cardata', carData);
+  // console.log('make', make);
+  // console.log('models', models);
   // const getCar = carData[0];
   // console.log('carmake', getCar)
 
