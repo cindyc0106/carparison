@@ -77,6 +77,8 @@ function PastReviewList(props) {
     );
   })
   return (
+    <div className="review">
+
     <h1> This is the PastReviewList 
       <Box maxW='sm' maxH='sm' overflow='scroll' borderWidth="1px" >
         <List >
@@ -85,6 +87,7 @@ function PastReviewList(props) {
       </Box>
       
     </h1>
+    </div>
   );
   }
   

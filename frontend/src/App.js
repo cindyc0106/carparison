@@ -16,20 +16,20 @@ import { CarContextProvider } from "./Context/SelectedCarContext";
 function App() {
 
   //background image rotation
-  // let c = 45;
-  // function draw() {
-  //   document.documentElement.style.setProperty('--direction', c++ + 'deg');
-  //   requestAnimationFrame(draw);
-  // }
+  let c = 45;
+  function draw() {
+    document.documentElement.style.setProperty('--direction', c++ + 'deg');
+    requestAnimationFrame(draw);
+  }
 
-  // requestAnimationFrame(draw);
+  requestAnimationFrame(draw);
   return (
     <ChakraProvider>
       <CarContextProvider>
 
     
-      {/* <div className="background"> </div>
-      <div className="foreground"> </div> */}
+      <div className="background"> </div>
+      <div className="foreground"> </div>
       <div className="App">
       <Navigator />
 

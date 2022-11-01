@@ -6,6 +6,14 @@
   opacity: 1 ;
 }
 
+.car-detail {
+  display: flex;
+  align-items: left;
+}
+
+h2 {
+  padding: 0 5px;;
+}
 .photo {
   display: flex;
   justify-content: center;
