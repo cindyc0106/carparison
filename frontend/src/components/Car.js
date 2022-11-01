@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from 'axios';
 import "./Car.css";
+// import { SelectedCarContext } from "./CarSearch";
 
 function Car() {
   const [cars, setCars] = useState([]);
@@ -31,15 +32,19 @@ function Car() {
   // axios.get("/api/cars"),
   // axios.get("/api/reviews")
 
+  // console.log('cars', cars)
   return (
     <div className="car">
+
       <h1> This is the Car
         <div>
           <a key={cars.id}>{carData}</a>
         </div>
-
       </h1>
-    </div>
+    </div> 
+
+    
+
   );
 }
 

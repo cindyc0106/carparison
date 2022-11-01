@@ -10,6 +10,8 @@ import Contact from "./pages/Contact";
 
 import { Route, Routes } from "react-router-dom";
 
+import { CarContextProvider } from "./Context/SelectedCarContext";
+
 function App() {
 
   //background image rotation
@@ -22,8 +24,11 @@ function App() {
   // requestAnimationFrame(draw);
   return (
     <ChakraProvider>
-      <div className="background"> </div>
-      <div className="foreground"> </div>
+      <CarContextProvider>
+
+    
+      {/* <div className="background"> </div>
+      <div className="foreground"> </div> */}
       <div className="App">
       <Navigator />
 
@@ -34,10 +39,11 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/review" element={<Review />} />
-          <Route path="/pastreviewlist" element={<PastReviewList />} />
+          <Route path="/pastreviewlist" element={<PastReviewList id={1} />} />
         </Routes>
 
       </div>
+      </CarContextProvider>
     </ChakraProvider>
   );
 }
