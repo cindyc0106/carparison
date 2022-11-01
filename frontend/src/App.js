@@ -5,6 +5,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import CarSearch from "./components/CarSearch";
 import PastReviewList from "./components/PastReviewList";
 import Car from "./components/Car";
+import Email from "./components/Email";
 
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -43,7 +44,7 @@ function App() {
           <Route path="/review" element={<Review />} />
           <Route path="/pastreviewlist" element={<PastReviewList id={1} />} />
         </Routes>
-
+      <Email/>
       </div>
       </CarContextProvider>
     </ChakraProvider>
