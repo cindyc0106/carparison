@@ -79,7 +79,6 @@ li {
 
 .past-review {
   width: 575px;
-  margin-top: 3rem;
 }
 
 .both-reviews {
@@ -87,6 +86,7 @@ li {
 }
 
 .review-title {
+  font-weight: bold;
   display: flex;
   font-size: larger;
   margin-left: 0.5rem;
@@ -98,8 +98,24 @@ li {
   border-radius: 0.5rem;
 }
 
+.past-review-title {
+  display: flex;
+  flex-direction: column;
+  font-size: larger;
+  background-color: #504F4C;
+  color: #E5DAD0;
+  width: 13rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .make, .model, .class, .year, .mpg, .cylinders, .displacement, .drive, .fuel-type, .transmission {
   padding: 3px;
   font-size: large;
   padding-bottom: 3px;
+}
+
+.review {
+  margin-top: 0.50rem;
 }
