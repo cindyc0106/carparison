@@ -26,12 +26,10 @@ function Navigator() {
       .get("http://localhost:3001/cars_lists")
       .then((res) => JSON.parse(JSON.stringify(res.data)))
       .then((data) => {
-        console.log('data', data);
         const newCar = data.filter((value) => {
           return (
             value.make.toLowerCase().includes(searchCar.toLowerCase()) ||
             value.model.toLowerCase().includes(searchCar.toLowerCase()) 
-            // value.year.toString().includes(searchCar)
           );
         });
         if (searchCar === "") {
@@ -41,13 +39,6 @@ function Navigator() {
         }
       });
   };
-
-  // const handleClick = (index) => {
-  //   // const click = e.target.value;
-  //   // console.log('click', click)
-  //   setSearch(query[index])
-  // }
-
 
   const clickHandler = function(make, models, year) {
     axios
@@ -59,18 +50,6 @@ function Navigator() {
       })
       .catch((err) => console.log("error:", err));
   };
-
-  // add clear button for input field
-  // const clearInput = () => {
-  //   setQuery("");
-  //   setSearch("");
-  // };
-
-  console.log('search', search);
-  console.log('setMake', make);
-  console.log('setModels', models);
-  console.log('setYear', year);
-  // console.log('setSearch', setSearch)
 
   return (
     <nav>
@@ -93,11 +72,11 @@ function Navigator() {
           {query.length !== 0 && (
             <div className="carSearch">
               {query.map((value, key) => {
-                const car = `${value.make} ${value.model} ${value.year}`;
+                const car = `${value.make} ${value.model}`;
                 return (
-                  <span className="carResults" key={key} onClick={() => { setMake(value.make); setModels(value.model); setYear(value.year); setSearch(car); clickHandler(value.make, value.model, value.year);}}>
+                  <span className="carResults" key={key} onClick={() => { setMake(value.make); setModels(value.model); setSearch(car); clickHandler(value.make, value.model)}}>
                     <a>
-                      {value.make} {value.model} {value.year}{" "}
+                      {value.make} {value.model} {" "}
                     </a>
                   </span>
                 );
@@ -109,7 +88,7 @@ function Navigator() {
             colorScheme="teal"
             variant="outline"
             size="xs"
-            onClick={() => {clickHandler(make, models, year)}}
+            onClick={() => {clickHandler(make, models)}}
           >
             Submit
           </Button>
