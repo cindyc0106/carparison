@@ -57,10 +57,11 @@ function Car() {
     <SelectedCarContext.Provider value={cars}>
       <h1 className="car-details">
         <div className="car-container">
-          <div className="photo"> <img alt="" width={800} height={500} src={photo} /></div>
+          <div className="photo"> <img alt="" src={photo} /></div>
           <div className="carDetails">
-            <span className="car-text"><strong><font size="+2">Vehicle Information</font></strong></span>
-            <span>__________________________</span>
+            <span className="car-text"><strong><font size="+3">Vehicle Information</font></strong></span>
+            <span>___________________________________</span>
+            <br></br>
             <h2 className="make">Make: <strong style={{textTransform:"uppercase"}}>{car.make}</strong></h2>
             <h2 className="model">Model: <strong style={{textTransform:"uppercase"}}>{car.model}</strong></h2>
             <h2 className="class">Class: <strong style={{textTransform:"uppercase"}}>{car.class}</strong></h2>

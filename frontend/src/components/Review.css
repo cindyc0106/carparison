@@ -10,8 +10,7 @@
   border: none !important;
   margin-bottom: 20px ;
   resize: none;
-  width: 28rem !important;
-
+  width: 33rem !important;
 }
 
 .css-1bki5fo {
@@ -20,21 +19,20 @@
 
 .star-btn {
   display: flex;
-  justify-content: center;
+  margin-left: 3rem;
 }
 
 .stars {
   margin-bottom: 5px;
-  margin-left: 2rem ;
+
 }
 
 .submit-btn {
   width: 5rem;
-  margin-left: 11.5rem ;
-  font-size: large;
+  margin-left: 13.5rem ;
   font-weight: bold;
   padding-top: 4px !important;
-  background-color: #504F4C;
+  background-color: #a9b4a4 !important;
   border: none;
   color: #A9B4A4;
   outline: none ;

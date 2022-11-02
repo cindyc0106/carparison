@@ -80,7 +80,7 @@ function PastReviewList(props) {
     <div className="review">
 
     <h1> 
-      <Box maxW='lg' maxH='lg' overflow='scroll' borderWidth="0px" >
+      <Box maxW='lg' maxH='lg' overflow='auto' borderWidth="0px" >
         <List >
           <ListItem key={reviews.id} >{show}</ListItem>
         </List>
