@@ -4,6 +4,7 @@ import Review from "./Review";
 import PastReviewList from "./PastReviewList";
 import "./Car.css";
 import { SelectedCarContext } from "../Context/SelectedCarContext";
+import { FaPen } from "react-icons/fa"
 
 
 function Car() {
@@ -75,9 +76,11 @@ function Car() {
           </div>
         </div>
         <div className="both-reviews">
+          <div ><span className="review-title"><FaPen/>  Write a review</span>
             <span className="review">
               <Review make={make.toLowerCase()} model={models.toLowerCase()} year={year}/>
             </span>
+          </div>
             <span className="past-review">
               <PastReviewList make={make.toLowerCase()} model={models.toLowerCase()} year={year} />
             </span>
