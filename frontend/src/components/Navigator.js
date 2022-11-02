@@ -5,29 +5,33 @@ import {
   Button,
 } from "@chakra-ui/react";
 // import { FaSearch, FaRegTimesCircle } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
 import "./Navigator.css";
 import { Link } from "react-router-dom";
+import { SelectedCarContext } from "../Context/SelectedCarContext";
+import { useNavigate } from "react-router-dom";
+
 
 function Navigator() {
   const [query, setQuery] = useState([]);
   const [search, setSearch] = useState("");
+  const { make, setMake, models, setModels, year, setYear, setCar } = useContext(SelectedCarContext);
+  const navigate = useNavigate();
 
   const handleSearch = (e) => {
     const searchCar = e.target.value;
     setSearch(searchCar);
     axios
-      .get("http://localhost:3001/cars")
-      .then((res) => JSON.parse(JSON.stringify(res)))
+      .get("http://localhost:3001/cars_lists")
+      .then((res) => JSON.parse(JSON.stringify(res.data)))
       .then((data) => {
-        // console.log(data.data);
-        data = data.data;
+        console.log('data', data);
         const newCar = data.filter((value) => {
           return (
             value.make.toLowerCase().includes(searchCar.toLowerCase()) ||
-            value.model.toLowerCase().includes(searchCar.toLowerCase()) ||
-            value.year.toString().includes(searchCar)
+            value.model.toLowerCase().includes(searchCar.toLowerCase()) 
+            // value.year.toString().includes(searchCar)
           );
         });
         if (searchCar === "") {
@@ -38,11 +42,35 @@ function Navigator() {
       });
   };
 
+  // const handleClick = (index) => {
+  //   // const click = e.target.value;
+  //   // console.log('click', click)
+  //   setSearch(query[index])
+  // }
+
+
+  const clickHandler = function(make, models, year) {
+    axios
+      .get(`http://localhost:3001/cars/${make.toLowerCase()}/${models.toLowerCase()}/${year}`)
+      .then((res) => {
+        setCar(res.data);
+
+        navigate(`/cars/${make}/${models}/${year}`);
+      })
+      .catch((err) => console.log("error:", err));
+  };
+
   // add clear button for input field
   // const clearInput = () => {
   //   setQuery("");
   //   setSearch("");
   // };
+
+  console.log('search', search);
+  console.log('setMake', make);
+  console.log('setModels', models);
+  console.log('setYear', year);
+  // console.log('setSearch', setSearch)
 
   return (
     <nav>
@@ -60,18 +88,14 @@ function Navigator() {
               onChange={handleSearch}
             />
             <div>
-              {/* {!query.length ? (
-                <FaSearch />
-              ) : (
-                <FaRegTimesCircle id="clearBtn" onClick={clearInput} />
-              )} */}
             </div>
           </div>
           {query.length !== 0 && (
             <div className="carSearch">
               {query.map((value, key) => {
+                const car = `${value.make} ${value.model} ${value.year}`;
                 return (
-                  <span className="carResults" key={key}>
+                  <span className="carResults" key={key} onClick={() => { setMake(value.make); setModels(value.model); setYear(value.year); setSearch(car); clickHandler(value.make, value.model, value.year);}}>
                     <a>
                       {value.make} {value.model} {value.year}{" "}
                     </a>
@@ -80,23 +104,16 @@ function Navigator() {
               })}
             </div>
           )}
-          <div className="searchButton">
-            <Button
-              display="none"
-              colorScheme="teal"
-              variant="outline"
-              size="xs"
-            >
-              Submit
-            </Button>
-            {/* <Button isLoading
-            loadingText='Loading'
-            colorScheme='teal'
-            variant='outline'
-            spinnerPlacement='end'
+
+          <Button
+            colorScheme="teal"
+            variant="outline"
+            size="xs"
+            onClick={() => {clickHandler(make, models, year)}}
           >
-            Submit</Button> */}
-          </div>
+            Submit
+          </Button>
+
         </form>
 
         <Breadcrumb separator="-">
