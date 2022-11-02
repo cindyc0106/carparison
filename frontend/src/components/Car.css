@@ -3,7 +3,7 @@
   justify-content: center;
   position: relative;
   z-index: 4;
-  opacity: 1 ;
+  opacity: 1;
 }
 
 .car-detail {
@@ -12,21 +12,30 @@
   justify-content: space-between;
 }
 
-h2 {
-  padding: 0 5px;;
+.review-input {
+  display: flex;
+  align-items: right;
+  padding-left: 200px;
 }
+
+h2 {
+  padding: 0 5px;
+  ;
+}
+
 .photo {
   display: flex;
   justify-content: flex-start;
   margin-right: 25px;
 
 }
+
 .car-details {
   margin: 25px;
   position: relative;
   z-index: 4;
-  opacity: 1 ;
-  size:25px;
+  opacity: 1;
+  size: 25px;
 
 }
 
@@ -43,19 +52,20 @@ li {
 
 .car-container {
   display: flex;
-
 }
 
 .car-text {
   margin-bottom: -20px;
 }
 
-.model, .year {
-background-color: #F2F1EF;
-border-radius: 5px;
-padding-left: 4px;
-}
-.make, .class {
+.model,
+.year {
+  background-color: #F2F1EF;
+  border-radius: 5px;
   padding-left: 4px;
 }
 
+.make,
+.class {
+  padding-left: 4px;
+}
