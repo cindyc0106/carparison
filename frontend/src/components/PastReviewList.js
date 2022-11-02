@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, Heading, Text, Divider, ListItem, List, Avatar, Flex } from "@chakra-ui/react"
-import { getUserById, getReviewsByCarId } from "../helpers/helpers";
+import { getUserById } from "../helpers/helpers";
 import { FaStar } from "react-icons/fa";
 //import Review from "./Review";
 // import "./PastReviewList.css";
@@ -12,9 +12,8 @@ function PastReviewList(props) {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
-
     axios
-    .get("http://localhost:3001/reviews")
+    .get(`http://localhost:3001/reviews/${props.make}/${props.model}/${props.year}`)
     .then((res) => JSON.parse(JSON.stringify(res)))
     .then((data) => {
       setPastReviews(data.data)
@@ -57,8 +56,8 @@ function PastReviewList(props) {
     })
     return nonStar
   }
-  const reviews = getReviewsByCarId(pastReviews, props.id)
-  const show = reviews.map((review, index) => {
+  
+  const show = pastReviews.map((review, index) => {
     const rating = review.rating;
     
     const star = stars(rating);
@@ -82,7 +81,7 @@ function PastReviewList(props) {
     <h1> 
       <Box maxW='lg' maxH='lg' overflow='auto' borderWidth="0px" >
         <List >
-          <ListItem key={reviews.id} >{show}</ListItem>
+          <ListItem key={show.index} >{show}</ListItem>
         </List>
       </Box>
       

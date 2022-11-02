@@ -6,7 +6,7 @@ import "./Review.css";
 import { FaStar } from "react-icons/fa";
 import "./RatingStars.css";
 
-function Review() {
+function Review(props) {
   const [user, setUser] = useState("");
   const [review, setReview] = useState("");
   const [rating, setRating] = useState(null)
@@ -44,7 +44,7 @@ function Review() {
     setUser(event.target.value)
   }
 
-  function save(name, review, rating) {
+  function save(name, review, rating, make, model, year) {
     setUser("")
     setReview("")
     setRating(null)
@@ -52,7 +52,10 @@ function Review() {
     .post("http://localhost:3001/reviews", {
       user: user,
       description: review,
-      rating: rating
+      rating: rating,
+      make: props.make,
+      model: props.model,
+      year: props.year
     })
     .then((res) => {
       setUser(name)
@@ -81,7 +84,7 @@ function Review() {
         />
         <span className="star-btn">
         <div className="stars">{stars}</div>
-        <Button className="submit-btn" colorScheme="teal" variant="outline" onClick={() => {save(user, review, rating)}} >
+        <Button className="submit-btn" colorScheme="teal" variant="outline" onClick={() => {save(user, review, rating, props.make, props.model, props.year)}} >
           Submit
         </Button>
         </span>

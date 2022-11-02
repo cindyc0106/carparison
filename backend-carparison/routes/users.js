@@ -17,6 +17,9 @@ const db = require('../db');
     })
   })
 
+  router.post('/', (req, res) => {
+    console.log('res from users', res.req.body);
+  })
 // }
 
 module.exports = router;
