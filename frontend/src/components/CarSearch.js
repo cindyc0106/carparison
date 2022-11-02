@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import * as ReactDOM from "react-dom";
 import axios from "axios";
-import Car from "./Car";
+// import Car from "./Car";
 import { FormControl, FormLabel, Select, Button } from "@chakra-ui/react";
 import "./CarSearch.css";
 import { BiSearch } from "react-icons/bi";
@@ -18,7 +17,7 @@ function CarSearch() {
     setModels,
     year,
     setYear,
-    car,
+    // car,
     setCar
   } = useContext(SelectedCarContext)
 

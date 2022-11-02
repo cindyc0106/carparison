@@ -4,12 +4,11 @@ import Review from "./Review";
 import PastReviewList from "./PastReviewList";
 import "./Car.css";
 import { SelectedCarContext } from "../Context/SelectedCarContext";
-// import { Container } from "@chakra-ui/react";
+
 
 function Car() {
   const [cars, setCars] = useState([]);
-  const { make, models, car, setCar, year, photo, setPhoto  } = useContext(SelectedCarContext);
-  // const { } = useContext(SelectedCarContext);
+  const { make, models, car, year, photo, setPhoto } = useContext(SelectedCarContext);
 
   //const [id, setId] = useState([]);
   // console.log("car in car.js", car);
@@ -26,20 +25,21 @@ function Car() {
         `https://cdn.imagin.studio/getImage?&customer=cacindychencompany&make=${make}&modelFamily=${models}&modelYear=${year}`
       ),
     ])
-    .then(
-      axios.spread((...responses) => {
-        setCars(responses[0].data);
-        setPhoto(responses[1].config.url);
-      })
-    );
+      .then(
+        axios.spread((...responses) => {
+          setCars(responses[0].data);
+          setPhoto(responses[1].config.url);
+        })
+      );
 
-  }, []);
+  }, [make, models, setPhoto, year]);
 
   const getID = cars.map((car) => {
-    if (make == car.make && models == car.model) {
+    if (make.toLowerCase() === car.make && models.toLowerCase() === car.model) {
       //setId(car.id);
       return car.id;
     }
+    return car.id;
   });
   const idGet = function(array) {
     for (let arr of array) {
@@ -103,12 +103,17 @@ function Car() {
             <h2 className="fuel-type">Fuel Type: <strong>{car.fuel_type}</strong></h2>
             <h2 className="transmission">Transmission: <strong>{car.transmission}</strong></h2>
           </div>
-          <div className="review-input">
-            <Review />
+          <div className="both-reviews">
+            <span className="review">
+              <Review />
+            </span>
+            <span className="past-review">
+              <PastReviewList id={id} />
+            </span>
           </div>
         </div>
       </h1>
-      <PastReviewList id={id} />
+
 
     </SelectedCarContext.Provider>
   );

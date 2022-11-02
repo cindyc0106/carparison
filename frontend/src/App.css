@@ -11,15 +11,15 @@ main {
   position: relative;
 }
 
-/* .background {
+.background {
   background-image: url(https://i.ibb.co/StN4NtT/Car1.png);
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-repeat: none;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   background-color: white;
   z-index: -10;
 
@@ -32,11 +32,11 @@ main {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-repeat: none;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   background-color: white;
   z-index: -10;
 
-} */
+}

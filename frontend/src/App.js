@@ -5,7 +5,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import CarSearch from "./components/CarSearch";
 import PastReviewList from "./components/PastReviewList";
 import Car from "./components/Car";
-
+import Email from "./components/Email";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
@@ -25,16 +25,8 @@ function App() {
   requestAnimationFrame(draw);
   return (
     <ChakraProvider>
-      <CarContextProvider>
-
-    
-      <div className="background"> </div>
-      <div className="foreground"> </div>
-      <div className="App">
-      <Navigator />
-
-        {/* Routing */}
-
+    <CarContextProvider>
+        <Navigator />
         <Routes>
           <Route path="/" element={<CarSearch />} />
           <Route path="/cars/:make/:model/:year" element={<Car />} />
@@ -43,10 +35,17 @@ function App() {
           <Route path="/review" element={<Review />} />
           <Route path="/pastreviewlist" element={<PastReviewList id={1} />} />
         </Routes>
+        <Email />
+      <div className="background"> </div>
+      <div className="foreground"> </div>
+      <div className="App">
 
+        {/* Routing */}
+
+        
       </div>
-      </CarContextProvider>
-    </ChakraProvider>
+    </CarContextProvider>
+  </ChakraProvider>
   );
 }
 
