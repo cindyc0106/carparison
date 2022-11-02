@@ -8,6 +8,8 @@ function CarContextProvider({ children }) {
   const [make, setMake] = useState('');
   const [models, setModels] = useState([]);
   const [year, setYear] = useState('');
+  const [ car, setCar ] = useState({})
+  const [ photo, setPhoto ] = useState("")
 
   const value = {
     make,
@@ -15,7 +17,11 @@ function CarContextProvider({ children }) {
     setMake,
     setModels,
     year,
-    setYear
+    setYear, 
+    car,
+    setCar,
+    photo,
+    setPhoto
   }
 
   return <SelectedCarContext.Provider value={value}>

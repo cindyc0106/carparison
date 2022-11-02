@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-//import * as ReactDOM from "react-dom";
 import axios from "axios";
-//import Car from "./Car";
+// import Car from "./Car";
 import { FormControl, FormLabel, Select, Button } from "@chakra-ui/react";
 import "./CarSearch.css";
 import { BiSearch } from "react-icons/bi";
@@ -17,7 +16,9 @@ function CarSearch() {
     setMake,
     setModels,
     year,
-    setYear
+    setYear,
+    // car,
+    setCar
   } = useContext(SelectedCarContext)
 
   const [cars, setCars] = useState([]);
@@ -66,7 +67,10 @@ function CarSearch() {
     navigate(`/cars/${make}/${models}/${year}`);
     axios
       .get(`http://localhost:3001/cars/${make.toLowerCase()}/${models.toLowerCase()}/${year}`)
-      .then((res) => console.log("res:", res.data))
+      .then((res) => {
+        setCar(res.data)
+
+      })
       .catch((err)=> console.log("error:", err))
   }
 

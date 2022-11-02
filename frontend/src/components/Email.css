@@ -1,0 +1,53 @@
+.social {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20rem;
+}
+
+.email {
+  padding: 1px;
+  margin-left: 2rem;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  width: 18rem !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-left: none !important;
+  border-bottom: 1px solid #504F4C !important;
+}
+
+.subscribe:before,
+.subscribe:after {
+  border: 0 solid transparent;
+  transition: all 0.3s;
+  content: '';
+  height: 0;
+  position: absolute;
+  width: 0px;
+}
+
+.subscribe:before {
+  /* border-top: 2px solid #504F4C; */
+  right: 0;
+  top: -4px;
+}
+
+.subscribe:after {
+  border-bottom: 2px solid #504F4C;
+  bottom: -4px;
+  left: 0;
+}
+
+.subscribe:hover:before,
+.subscribe:hover:after {
+  width: 100%;
+  
+}
