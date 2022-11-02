@@ -26,6 +26,9 @@ function App() {
   return (
     <ChakraProvider>
     <CarContextProvider>
+      <div className="App">
+      <div className="background">      </div>
+      <div className="foreground">      </div>
         <Navigator />
         <Routes>
           <Route path="/" element={<CarSearch />} />
@@ -36,13 +39,8 @@ function App() {
           <Route path="/pastreviewlist" element={<PastReviewList id={1} />} />
         </Routes>
         <Email />
-      <div className="background"> </div>
-      <div className="foreground"> </div>
-      <div className="App">
 
-        {/* Routing */}
-
-        
+      
       </div>
     </CarContextProvider>
   </ChakraProvider>

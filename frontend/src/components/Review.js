@@ -27,7 +27,7 @@ function Review() {
             size={25} 
             className="pointer" 
             // have the yellow color take effect when hovered, or else is grey
-            color={ value <= (hover || rating) ? "#f9d02f": "#c7c7c7"}
+            color={ value <= (hover || rating) ? "#FFD700": "#504F4C"}
             onMouseEnter={() => setHover(value)}
             onMouseLeave={() => setHover(null)}
           />
@@ -68,12 +68,11 @@ function Review() {
 
   return (
     <h1>
-      This is the Review
       <form className='form' onSubmit={event => event.preventDefault()}>
         <FormControl isRequired width={400}>
-          <FormLabel>Name</FormLabel>
+          <FormLabel>Name: </FormLabel>
           <Input placeholder="Please enter name" value={user} onChange={enterName}/>
-          <FormLabel>Review</FormLabel>
+          <FormLabel>Review: </FormLabel>
         <Textarea
           className="input"
           value = {review}
