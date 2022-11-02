@@ -8,16 +8,18 @@ import { SelectedCarContext } from "../Context/SelectedCarContext";
 
 function Car() {
   const [cars, setCars] = useState([]);
-  const { make, models } = useContext(SelectedCarContext);
+  const { make, models, year } = useContext(SelectedCarContext);
   //const [id, setId] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/cars")
+      .get(`http://localhost:3001/cars/${make.toLowerCase()}/${models.toLowerCase()}/${year}`)
       .then((res) => JSON.parse(JSON.stringify(res)))
       .then((data) => {
+        console.log('this is data', data.data)
         setCars(data.data);
-      });
+      })
+      .then(console.log('this is cars', cars));
 
   }, []);
 
@@ -36,8 +38,9 @@ function Car() {
     }
   }
   const id = idGet(getID);
+
   const carData = cars.map((car, index) => {
-    if (make == car.make && models == car.model) {
+    if (make === car.make && models === car.model) {
       // setId(car.id);
       return (
         <>

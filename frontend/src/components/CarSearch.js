@@ -65,7 +65,7 @@ function CarSearch() {
   const clickHandler = function() {
     navigate(`/cars/${make}/${models}/${year}`);
     axios
-      .get(`http://localhost:3001/cars/${make}/${models}/${year}`)
+      .get(`http://localhost:3001/cars/${make.toLowerCase()}/${models.toLowerCase()}/${year}`)
       .then((res) => console.log("res:", res.data))
       .catch((err)=> console.log("error:", err))
   }
