@@ -26,12 +26,13 @@ h2 {
 .photo {
   display: flex;
   justify-content: flex-start;
-  margin-right: 25px;
+  height: 30rem;
 
 }
 
+
 .car-details {
-  margin: 25px;
+  /* margin: 25px; */
   position: relative;
   z-index: 4;
   opacity: 1;
@@ -59,7 +60,7 @@ li {
 }
 
 .model,
-.year {
+.year, .cylinders, .drive, .transmission {
   background-color: #F2F1EF;
   border-radius: 5px;
   padding-left: 4px;
@@ -69,16 +70,20 @@ li {
 .class {
   padding-left: 4px;
 }
-/* 
-.both-reviews {
-  display:flex;
 
+.both-reviews {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .past-review {
-  width: 35rem
+  width: 550px;
 }
+
 .both-reviews {
-  display: flex;
-  justify-content: center;
-} */
+  margin-left: 7rem;
+}
+
+.review {
+  margin-right: 8rem;
+}
