@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import * as ReactDOM from "react-dom";
+//import * as ReactDOM from "react-dom";
 import axios from "axios";
-import Car from "./Car";
+//import Car from "./Car";
 import { FormControl, FormLabel, Select, Button } from "@chakra-ui/react";
 import "./CarSearch.css";
 import { BiSearch } from "react-icons/bi";
@@ -27,7 +27,7 @@ function CarSearch() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/cars")
+      .get("http://localhost:3001/cars_lists")
       .then((res) => JSON.parse(JSON.stringify(res)))
       .then((data) => {
         const carObj = data.data;
@@ -51,16 +51,22 @@ function CarSearch() {
   };
 
   // CAR YEAR
-  const carYear = cars.map((car) => car.year);
-  const filteredYear = filteredMake(carYear);
-  const yearFiltered = filteredYear.map((cars, key) => <option key={key} className="option">{cars}</option>);
+  const yearList  = () => {
+    const year = [];
+    for (let i = 1990; i <= 2021; i++) {
+      year.push(i);
+    }
+    return year;
+  }
+  const years = yearList();
+  const yearFiltered = years.map((year, key) => <option key={key} className="option">{year}</option>);
 
 
   const clickHandler = function() {
-    navigate(`/cars/${make}/${models}/${year}`)
+    navigate(`/cars/${make}/${models}/${year}`);
     axios
       .get(`http://localhost:3001/cars/${make}/${models}/${year}`)
-      .then((res) => console.log("res:", res))
+      .then((res) => console.log("res:", res.data))
       .catch((err)=> console.log("error:", err))
   }
 

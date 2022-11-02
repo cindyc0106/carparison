@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS cars_lists CASCADE;
+
+CREATE TABLE cars_lists(
+    id SERIAL PRIMARY KEY NOT NULL,
+    make VARCHAR(255) NOT NULL,
+    model VARCHAR(255) NOT NULL
+);

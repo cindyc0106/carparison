@@ -10,6 +10,7 @@ const cors = require("cors");
 const usersRouter = require('./routes/users');
 const carsRouter = require('./routes/cars');
 const reviewsRouter = require('./routes/reviews');
+const listsRouter = require('./routes/cars_lists');
 
 const app = express();
 const PORT = 3001; 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/users', usersRouter);
 app.use('/cars', carsRouter);
 app.use('/reviews', reviewsRouter);
+app.use('/cars_lists', listsRouter);
 
 
 app.listen(PORT, () => {
