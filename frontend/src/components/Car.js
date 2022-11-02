@@ -55,7 +55,7 @@ function Car() {
           </div>
           <div className="both-reviews">
             <span className="review">
-              <Review />
+              <Review make={make.toLowerCase()} model={models.toLowerCase()} year={year}/>
             </span>
             <span className="past-review">
               <PastReviewList make={make.toLowerCase()} model={models.toLowerCase()} year={year} />
