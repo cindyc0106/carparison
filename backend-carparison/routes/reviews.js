@@ -4,11 +4,11 @@ const db = require('../db');
 // db.connect();
 
 
-  router.get('/', (req, res) => {
+  router.get('/:make/:model/:year', (req, res) => {
 
     return db.query(
-      `SELECT * FROM reviews;`
-    )
+      `SELECT * FROM reviews WHERE car_make = $1 AND car_model = $2 AND car_year = $3;`,
+      [req.params.make, req.params.model, req.params.year])
     .then((data) => {
       res.json(data.rows)
     })

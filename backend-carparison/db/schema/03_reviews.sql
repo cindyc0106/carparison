@@ -4,5 +4,7 @@ CREATE TABLE reviews(
     rating INTEGER NOT NULL,
     description VARCHAR(255) NOT NULL,
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-    car_id INTEGER REFERENCES cars(id) ON DELETE CASCADE
+    car_make VARCHAR(255) NOT NULL,
+    car_model VARCHAR(255) NOT NULL,
+    car_year VARCHAR(255) NOT NULL
 );
