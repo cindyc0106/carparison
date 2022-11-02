@@ -79,10 +79,12 @@ function Review() {
           onChange={enterReview}
           placeholder="Please input review"
         />
+        <span className="star-btn">
         <div className="stars">{stars}</div>
-        <Button colorScheme="teal" variant="outline" onClick={() => {save(user, review, rating)}} >
+        <Button className="submit-btn" colorScheme="teal" variant="outline" onClick={() => {save(user, review, rating)}} >
           Submit
         </Button>
+        </span>
         </FormControl>
       </form>
     </h1>
