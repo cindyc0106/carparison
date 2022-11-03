@@ -29,7 +29,8 @@ export default function Coffee() {
     const query = new URLSearchParams(window.location.search);
 
     if (query.get("success")) {
-      setMessage("Thank you for buying us a coffee :)");
+      setMessage("Thank you :)")
+      setTimeout(() => setMessage(""), 3000);
     }
 
     if (query.get("canceled")) {

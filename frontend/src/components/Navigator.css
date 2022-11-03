@@ -62,7 +62,8 @@
 
 .chakra-input {
   width: 170px  !important;
-  margin-right: 65px;
+  position: absolute;
+  margin-right: 0;
   border-color: #a9b4a400;
 }
 

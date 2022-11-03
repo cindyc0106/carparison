@@ -9,10 +9,15 @@
   display: flex !important;
   margin: -0.5rem -8rem 0rem 0rem !important;
   background-color: #504f4c00 !important;
+  
+}
+
+.css-i857na:hover {
+  background-color: #504f4c38 !important
 }
 
 section {
   display: flex !important;
-  margin: 4.1rem -8rem 0rem 0rem !important;
+  margin: 4.1rem 2rem 0rem -2rem !important;
   background-color: #504f4c00 !important;
 }
