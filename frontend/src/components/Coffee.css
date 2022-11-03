@@ -5,9 +5,14 @@
   background-color: #504f4c00 !important;
 }
 
-p {
+.css-i857na {
+  display: flex !important;
+  margin: -0.5rem -8rem 0rem 0rem !important;
+  background-color: #504f4c00 !important;
+}
+
+section {
   display: flex !important;
   margin: 4.1rem -8rem 0rem 0rem !important;
-
   background-color: #504f4c00 !important;
 }
