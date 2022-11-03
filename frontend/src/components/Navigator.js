@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { SelectedCarContext } from "../Context/SelectedCarContext";
 import { useNavigate } from "react-router-dom";
 
+import Coffee from "./Coffee";
 
 function Navigator() {
   const [query, setQuery] = useState([]);
@@ -101,19 +102,29 @@ function Navigator() {
               })}
             </div>
           )}
+          <div className="searchButton">
+            <Button
+              display="none"
+              colorScheme="teal"
+              variant="outline"
+              size="xs"
+            >
+              Submit
+            </Button>
+          </div>
         </form>
-
+            <Coffee/>
         <Breadcrumb separator="-">
           <BreadcrumbItem>
-            <Link to="/">Home</Link>
+            <Link to="/"><strong>Home</strong></Link>
           </BreadcrumbItem>
 
           <BreadcrumbItem>
-            <Link to="/about">About</Link>
+            <Link to="/about"><strong>About</strong></Link>
           </BreadcrumbItem>
 
           <BreadcrumbItem isCurrentPage>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact"><strong>Contact</strong></Link>
           </BreadcrumbItem>
         </Breadcrumb>
       </div>

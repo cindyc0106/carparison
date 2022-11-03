@@ -27,6 +27,12 @@
 
 }
 
+.css-1fifbr8 {
+  border: none !important;
+  color: #504F4C !important;
+  background-color: #504f4c00 !important;
+}
+
 .submit-btn {
   width: 5rem;
   margin-left: 13.5rem ;
@@ -35,7 +41,7 @@
   border: none;
   color: #A9B4A4;
   outline: none ;
-  padding: 12px 40px 10px;
+  padding: 12px 40px 5px;
   position: relative;
 }
 

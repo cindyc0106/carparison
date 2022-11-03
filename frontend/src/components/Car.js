@@ -10,6 +10,10 @@ import { FaPen } from "react-icons/fa"
 function Car() {
   const [ cars, setCars ] = useState([]);
   const { make, models, car, year, photo, setPhoto } = useContext(SelectedCarContext);
+  const [ review, setReview ] = useState("");
+  const reset = function(value) {
+    setReview(value);
+  }
 
   useEffect(() => {
 
@@ -27,23 +31,6 @@ function Car() {
       );
 
   }, [make, models, setPhoto, year]);
-
-  const getID = cars.map((car) => {
-    if (make.toLowerCase() === car.make && models.toLowerCase() === car.model) {
-      //setId(car.id);
-      return car.id;
-    }
-    return car.id;
-  });
-  const idGet = function(array) {
-    for (let arr of array) {
-      if (arr) {
-        //setId(arr);
-        return arr;
-      }
-    }
-  };
-  const id = idGet(getID);
 
  //getting transmission to render full word automatic instead of "a"
   const transmission = function(car) {
@@ -78,13 +65,13 @@ function Car() {
         <div className="both-reviews">
           <div ><span className="review-title"><FaPen/>  Write a review</span>
             <span className="review">
-              <Review make={make.toLowerCase()} model={models.toLowerCase()} year={year}/>
+              <Review make={make.toLowerCase()} model={models.toLowerCase()} year={year}  reset={reset}/>
             </span>
           </div>
             <span className="past-review">
             <span className="past-review-title" style={{fontWeight:"bold", fontSize:"larger"}}>Consumer reviews</span>
             <font size="3">Read what other owners think about the {car.year} {car.make} {car.model}.</font>
-            <PastReviewList make={make.toLowerCase()} model={models.toLowerCase()} year={year} />
+            <PastReviewList make={make.toLowerCase()} model={models.toLowerCase()} year={year} reset={review}/>
             </span>
           </div>
       </h1>

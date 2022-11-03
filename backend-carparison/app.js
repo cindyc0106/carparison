@@ -3,7 +3,9 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require("cors");
+require('dotenv').config();
 
+const stripe = require('stripe')(`${process.env.STRIPE_PRIVATE_KEY}`);
 // const dbHelpers = require('./helpers/dbHelpers')(db);
 
 // var indexRouter = require('./routes/index');
@@ -27,6 +29,22 @@ app.use('/cars', carsRouter);
 app.use('/reviews', reviewsRouter);
 app.use('/cars_lists', listsRouter);
 
+app.post('/create-checkout-session', async (req, res) => {
+  const session = await stripe.checkout.sessions.create({
+    line_items: [
+      {
+        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+        price: 'price_1M079aKPWu57wspdTEO7uj6I',
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: `${process.env.CLIENT_URL}?success=true`,
+    cancel_url: `${process.env.CLIENT_URL}?canceled=true`,
+  });
+
+  res.redirect(303, session.url);
+});
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}!`);

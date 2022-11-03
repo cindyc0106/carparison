@@ -15,7 +15,8 @@
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "morgan": "~1.9.1",
-    "pg": "^8.8.0"
+    "pg": "^8.8.0",
+    "stripe": "^10.15.0"
   },
   "devDependencies": {
     "dotenv": "^16.0.3",
