@@ -4,7 +4,6 @@ import {
   Input,
   Button,
 } from "@chakra-ui/react";
-// import { FaSearch, FaRegTimesCircle } from "react-icons/fa";
 import { useContext, useState } from "react";
 import axios from "axios";
 import "./Navigator.css";
@@ -29,7 +28,8 @@ function Navigator() {
         const newCar = data.filter((value) => {
           return (
             value.make.toLowerCase().includes(searchCar.toLowerCase()) ||
-            value.model.toLowerCase().includes(searchCar.toLowerCase())
+            value.model.toLowerCase().includes(searchCar.toLowerCase()) ||
+            value.year
           );
         });
         if (searchCar === "") {
@@ -90,7 +90,8 @@ function Navigator() {
                       setYear(value.year);
                       setSearch(car);
                       clickHandler(value.make, value.model, value.year);
-                      setQuery("")
+                      setQuery("");
+                      setSearch("");
                     }}>
                     <p>
                       {value.make} {value.model} {" "}
