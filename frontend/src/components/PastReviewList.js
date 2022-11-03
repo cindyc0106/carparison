@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, Heading, Text, Divider, ListItem, List, Avatar, Flex } from "@chakra-ui/react"
 import { FaStar } from "react-icons/fa";
+//import Review from "./Review";
+import "./PastReviewList.css";
 
 
 function PastReviewList(props) {
