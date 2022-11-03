@@ -102,16 +102,6 @@ function Navigator() {
               })}
             </div>
           )}
-          <div className="searchButton">
-            <Button
-              display="none"
-              colorScheme="teal"
-              variant="outline"
-              size="xs"
-            >
-              Submit
-            </Button>
-          </div>
         </form>
             <Coffee/>
         <Breadcrumb separator="-">
