@@ -62,11 +62,11 @@ function PastReviewList(props) {
     
     const star = stars(rating);
     const nonStar = nonStars(rating);
-    const user = getUserById(users, review.user_id )
+    //const user = getUserById(users, review.user_id )
     return (
       <Box maxW='lg' key={index} borderWidth="0px" borderRadius="lg" >
         <Heading fontSize={20} display='flex' flexDirection='row' p={2} justifyContent='space-between' bg='#a9b4a4a8' borderRadius={"md"}>
-          <div><Avatar boxSize='1.25em'/> {user.name}</div>
+          <div><Avatar boxSize='1.25em'/> {review.user_name}</div>
           <Flex direction='row'>{star}{nonStar}</Flex>
         </Heading>
         <Divider orientation="horizontal" />
