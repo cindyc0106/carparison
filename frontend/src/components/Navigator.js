@@ -27,9 +27,8 @@ function Navigator() {
       .then((data) => {
         const newCar = data.filter((value) => {
           return (
-            value.make.toLowerCase().includes(searchCar.toLowerCase()) ||
-            value.model.toLowerCase().includes(searchCar.toLowerCase()) ||
-            value.year
+            (value.make.toLowerCase().includes(searchCar.toLowerCase()) ||
+            value.model.toLowerCase().includes(searchCar.toLowerCase()))
           );
         });
         if (searchCar === "") {
@@ -45,7 +44,7 @@ function Navigator() {
       .get(`http://localhost:3001/cars/${make.toLowerCase()}/${models.toLowerCase()}/${year}`)
       .then((res) => {
         setCar(res.data);
-        navigate(`/cars/${make}/${models}/${year}`);
+        navigate(`/cars/${make}/${models}/${res.data.year}`);
       })
       .catch((err) => console.log("error:", err));
   };
@@ -80,6 +79,7 @@ function Navigator() {
             <div className="carSearch">
               {query.map((value, key) => {
                 const car = `${value.make} ${value.model}`;
+                // console.log('year', value)
                 return (
                   <span
                     className="carResults"
