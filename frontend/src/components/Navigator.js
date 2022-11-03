@@ -45,7 +45,6 @@ function Navigator() {
       .get(`http://localhost:3001/cars/${make.toLowerCase()}/${models.toLowerCase()}/${year}`)
       .then((res) => {
         setCar(res.data);
-
         navigate(`/cars/${make}/${models}/${year}`);
       })
       .catch((err) => console.log("error:", err));
@@ -71,7 +70,7 @@ function Navigator() {
                 colorScheme="teal"
                 variant="outline"
                 size="xs"
-                onClick={() => { clickHandler(make, models, year); }}
+                onClick={() => { clickHandler(make, models, year); setQuery(""); }}
               >
                 Submit
               </Button>
@@ -90,11 +89,12 @@ function Navigator() {
                       setModels(value.model);
                       setYear(value.year);
                       setSearch(car);
-                      clickHandler(value.make, value.model);
+                      clickHandler(value.make, value.model, value.year);
+                      setQuery("")
                     }}>
-                    <a>
+                    <p>
                       {value.make} {value.model} {" "}
-                    </a>
+                    </p>
                   </span>
                 );
               })}

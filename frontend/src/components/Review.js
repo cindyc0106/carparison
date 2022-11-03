@@ -72,7 +72,7 @@ function Review(props) {
   return (
     <h1>
       <form className='form' onSubmit={event => event.preventDefault()}>
-        <FormControl isRequired requiredIndicator>
+        <FormControl isRequired >
           <FormLabel>Name: </FormLabel>
           <Input placeholder="Please enter name" value={user} onChange={enterName}/>
           <FormLabel>Review: </FormLabel>
