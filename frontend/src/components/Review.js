@@ -63,16 +63,15 @@ function Review(props) {
       setRating(rating)
     })
     .catch((err) => console.log("error msg:", err.message))
-    // console.log("user name:", name)
-    // console.log("review:", review)
-    // console.log("rating:", rating)
+    
+    props.reset(name)
   }
 
 
   return (
     <h1>
       <form className='form' onSubmit={event => event.preventDefault()}>
-        <FormControl isRequired requiredIndicator>
+        <FormControl isRequired >
           <FormLabel>Name: </FormLabel>
           <Input placeholder="Please enter name" value={user} onChange={enterName}/>
           <FormLabel>Review: </FormLabel>
