@@ -21,13 +21,14 @@ router.post('/', (req, res) => {
   console.log("response from react:", res.req.body)
   const description = res.req.body.description
   const rating = res.req.body.rating
+  const user = res.req.body.user
   const make = res.req.body.make
   const model = res.req.body.model
   const year = res.req.body.year
   return db.query(
-    `INSERT INTO reviews (rating, description, user_id, car_make, car_model, car_year)
-    VALUES ($1, $2, 1, $3, $4, $5)
-    `, [rating, description, make, model, year])
+    `INSERT INTO reviews (rating, description, user_name, car_make, car_model, car_year)
+    VALUES ($1, $2, $3, $4, $5, $6)
+    `, [rating, description, user, make, model, year])
 })
 
 module.exports = router;

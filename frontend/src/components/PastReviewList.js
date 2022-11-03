@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, Heading, Text, Divider, ListItem, List, Avatar, Flex } from "@chakra-ui/react"
-import { getUserById } from "../helpers/helpers";
 import { FaStar } from "react-icons/fa";
 //import Review from "./Review";
 import "./PastReviewList.css";
@@ -9,7 +8,6 @@ import "./PastReviewList.css";
 
 function PastReviewList(props) {
   const [pastReviews, setPastReviews] = useState([])
-  const [users, setUsers] = useState([])
 
   useEffect(() => {
     axios
@@ -18,16 +16,7 @@ function PastReviewList(props) {
     .then((data) => {
       setPastReviews(data.data)
     })
-  }, [])
-
-  useEffect(() => {
-    axios
-    .get("http://localhost:3001/users")
-    .then((res) => JSON.parse(JSON.stringify(res)))
-    .then((data) => {
-      setUsers(data.data)
-    })
-  }, [])
+  }, [props.make, props.model, props.year, props.reset])
 
   const stars = function (rating) {
     let num = 0;
@@ -62,11 +51,10 @@ function PastReviewList(props) {
     
     const star = stars(rating);
     const nonStar = nonStars(rating);
-    const user = getUserById(users, review.user_id )
     return (
       <Box maxW='lg' key={index} borderWidth="0px" borderRadius="lg" >
         <Heading fontSize={20} display='flex' flexDirection='row' p={2} justifyContent='space-between' bg='#a9b4a4a8' borderRadius={"md"}>
-          <div><Avatar boxSize='1.25em'/> {user.name}</div>
+          <div><Avatar boxSize='1.25em'/> {review.user_name}</div>
           <Flex direction='row'>{star}{nonStar}</Flex>
         </Heading>
         <Divider orientation="horizontal" />
