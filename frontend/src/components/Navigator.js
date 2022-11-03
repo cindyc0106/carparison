@@ -9,6 +9,7 @@ import { useState } from "react";
 import axios from "axios";
 import "./Navigator.css";
 import { Link } from "react-router-dom";
+import Coffee from "./Coffee";
 
 function Navigator() {
   const [query, setQuery] = useState([]);
@@ -89,27 +90,20 @@ function Navigator() {
             >
               Submit
             </Button>
-            {/* <Button isLoading
-            loadingText='Loading'
-            colorScheme='teal'
-            variant='outline'
-            spinnerPlacement='end'
-          >
-            Submit</Button> */}
           </div>
         </form>
-
+            <Coffee/>
         <Breadcrumb separator="-">
           <BreadcrumbItem>
-            <Link to="/">Home</Link>
+            <Link to="/"><strong>Home</strong></Link>
           </BreadcrumbItem>
 
           <BreadcrumbItem>
-            <Link to="/about">About</Link>
+            <Link to="/about"><strong>About</strong></Link>
           </BreadcrumbItem>
 
           <BreadcrumbItem isCurrentPage>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact"><strong>Contact</strong></Link>
           </BreadcrumbItem>
         </Breadcrumb>
       </div>

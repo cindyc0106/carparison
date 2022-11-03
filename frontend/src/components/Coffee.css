@@ -1,0 +1,13 @@
+.coffee-button {
+  display: flex;
+  margin: 3.65rem -30rem 0rem 0rem;
+  border: 2px solid #504F4C;
+  background-color: #504f4c00 !important;
+}
+
+p {
+  display: flex !important;
+  margin: 4.1rem -8rem 0rem 0rem !important;
+
+  background-color: #504f4c00 !important;
+}

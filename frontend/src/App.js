@@ -6,7 +6,6 @@ import CarSearch from "./components/CarSearch";
 import PastReviewList from "./components/PastReviewList";
 import Car from "./components/Car";
 import Email from "./components/Email";
-import Coffee from "./components/Coffee";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
@@ -31,7 +30,7 @@ function App() {
       <div className="background">      </div>
       <div className="foreground">      </div>
         <Navigator />
-        <Coffee/>
+
         <Routes>
           <Route path="/" element={<CarSearch />} />
           <Route path="/cars/:make/:model/:year" element={<Car />} />

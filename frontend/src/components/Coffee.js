@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./Coffee.css";
-import {
-  Button,
-} from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
+import { FaCoffee } from "react-icons/fa";
 
 const ProductDisplay = () => (
   <section>
     <form action="/create-checkout-session" method="POST">
-      <Button className="coffee-button" type="submit">
-        Buy us a coffee!
+      <Button className="coffee-button" type="submit" >
+        <FaCoffee/>
+        Gift us a coffee!
+        <FaCoffee/>
       </Button>
     </form>
   </section>
