@@ -9,7 +9,7 @@
 
 
 .carSearch {
-  margin-right: 66px;
+  margin-right: 135px;
   margin-top: 88px;
   width: 170px;
   height: 59px;
@@ -17,7 +17,7 @@
   box-shadow: black 0px 5px 15px;
   overflow: hidden;
   overflow-y: auto;
-  position: fixed;
+  position: absolute;
 }
 
 .carSearch::-webkit-scrollbar {

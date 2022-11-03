@@ -37,6 +37,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/review" element={<Review />} />
           <Route path="/pastreviewlist" element={<PastReviewList id={1} />} />
+          <Route path="*" element={<CarSearch />} />
         </Routes>
         <Email />
 

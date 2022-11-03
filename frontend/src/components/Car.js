@@ -47,7 +47,7 @@ function Car() {
 
  //getting transmission to render full word automatic instead of "a"
   const transmission = function(car) {
-    if(car.transmission == "a" || car.transmission == "A") {
+    if(car.transmission === "a" || car.transmission === "A") {
       return "Automatic"
     }
       return "Manual"

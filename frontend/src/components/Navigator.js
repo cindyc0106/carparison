@@ -29,7 +29,7 @@ function Navigator() {
         const newCar = data.filter((value) => {
           return (
             value.make.toLowerCase().includes(searchCar.toLowerCase()) ||
-            value.model.toLowerCase().includes(searchCar.toLowerCase()) 
+            value.model.toLowerCase().includes(searchCar.toLowerCase())
           );
         });
         if (searchCar === "") {
@@ -67,6 +67,14 @@ function Navigator() {
               onChange={handleSearch}
             />
             <div>
+              <Button
+                colorScheme="teal"
+                variant="outline"
+                size="xs"
+                onClick={() => { clickHandler(make, models, year); }}
+              >
+                Submit
+              </Button>
             </div>
           </div>
           {query.length !== 0 && (
@@ -74,7 +82,16 @@ function Navigator() {
               {query.map((value, key) => {
                 const car = `${value.make} ${value.model}`;
                 return (
-                  <span className="carResults" key={key} onClick={() => { setMake(value.make); setModels(value.model); setSearch(car); clickHandler(value.make, value.model)}}>
+                  <span
+                    className="carResults"
+                    key={key}
+                    onClick={() => {
+                      setMake(value.make);
+                      setModels(value.model);
+                      setYear(value.year);
+                      setSearch(car);
+                      clickHandler(value.make, value.model);
+                    }}>
                     <a>
                       {value.make} {value.model} {" "}
                     </a>
@@ -83,16 +100,6 @@ function Navigator() {
               })}
             </div>
           )}
-
-          <Button
-            colorScheme="teal"
-            variant="outline"
-            size="xs"
-            onClick={() => {clickHandler(make, models)}}
-          >
-            Submit
-          </Button>
-
         </form>
 
         <Breadcrumb separator="-">
