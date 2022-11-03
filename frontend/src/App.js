@@ -6,6 +6,7 @@ import CarSearch from "./components/CarSearch";
 import PastReviewList from "./components/PastReviewList";
 import Car from "./components/Car";
 import Email from "./components/Email";
+
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
@@ -39,9 +40,7 @@ function App() {
           <Route path="/pastreviewlist" element={<PastReviewList id={1} />} />
           <Route path="*" element={<CarSearch />} />
         </Routes>
-        <Email />
-
-      
+      <Email/>
       </div>
     </CarContextProvider>
   </ChakraProvider>
