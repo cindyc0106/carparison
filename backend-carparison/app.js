@@ -3,8 +3,9 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require("cors");
+require('dotenv').config();
 
-const stripe = require('stripe')('sk_test_51LuJmfKPWu57wspdmBBDXEeYwpfrPpPUhx5SqNw8AP0p3g7D4G97CHUlFF9RUdt91qLHbX1vHh3knRDCj0RLT0mi00EX7p5Zz2');
+const stripe = require('stripe')(`${process.env.STRIPE_PRIVATE_KEY}`);
 // const dbHelpers = require('./helpers/dbHelpers')(db);
 
 // var indexRouter = require('./routes/index');
