@@ -10,6 +10,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 20rem;
+  margin-bottom: 0;
 }
 
 .email {

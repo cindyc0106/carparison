@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, Heading, Text, Divider, ListItem, List, Avatar, Flex } from "@chakra-ui/react"
-import { getUserById, getReviewsByCarId } from "../helpers/helpers";
+import { getUserById } from "../helpers/helpers";
 import { FaStar } from "react-icons/fa";
 //import Review from "./Review";
 // import "./PastReviewList.css";
@@ -12,9 +12,8 @@ function PastReviewList(props) {
   const [users, setUsers] = useState([])
 
   useEffect(() => {
-
     axios
-    .get("http://localhost:3001/reviews")
+    .get(`http://localhost:3001/reviews/${props.make}/${props.model}/${props.year}`)
     .then((res) => JSON.parse(JSON.stringify(res)))
     .then((data) => {
       setPastReviews(data.data)
@@ -40,7 +39,7 @@ function PastReviewList(props) {
     }
     
     const star = full.map(() => {
-      return (<FaStar color="#f9d02f"/>);
+      return (<FaStar color="#FFD700"/>);
     })
     
     return star;
@@ -53,20 +52,20 @@ function PastReviewList(props) {
       a --;
     }
     const nonStar = empty.map(() => {
-      return (<FaStar color="#c7c7c7"/>)
+      return (<FaStar color="#504F4C"/>)
     })
     return nonStar
   }
-  const reviews = getReviewsByCarId(pastReviews, props.id)
-  const show = reviews.map((review, index) => {
+  
+  const show = pastReviews.map((review, index) => {
     const rating = review.rating;
     
     const star = stars(rating);
     const nonStar = nonStars(rating);
     const user = getUserById(users, review.user_id )
     return (
-      <Box maxW='lg' key={index} borderWidth="1px" borderRadius="lg" >
-        <Heading fontSize={20} display='flex' flexDirection='row' p={2} justifyContent='space-between' bg='teal.100'>
+      <Box maxW='lg' key={index} borderWidth="0px" borderRadius="lg" >
+        <Heading fontSize={20} display='flex' flexDirection='row' p={2} justifyContent='space-between' bg='#a9b4a4a8' borderRadius={"md"}>
           <div><Avatar boxSize='1.25em'/> {user.name}</div>
           <Flex direction='row'>{star}{nonStar}</Flex>
         </Heading>
@@ -79,10 +78,10 @@ function PastReviewList(props) {
   return (
     <div className="review">
 
-    <h1> This is the PastReviewList 
-      <Box maxW='lg' maxH='lg' overflow='scroll' borderWidth="1px" >
+    <h1> 
+      <Box maxW='lg' maxH='lg' overflow='auto' borderWidth="0px" >
         <List >
-          <ListItem key={reviews.id} >{show}</ListItem>
+          <ListItem key={show.index} >{show}</ListItem>
         </List>
       </Box>
       

@@ -6,7 +6,7 @@ import "./Review.css";
 import { FaStar } from "react-icons/fa";
 import "./RatingStars.css";
 
-function Review() {
+function Review(props) {
   const [user, setUser] = useState("");
   const [review, setReview] = useState("");
   const [rating, setRating] = useState(null)
@@ -27,7 +27,7 @@ function Review() {
             size={25} 
             className="pointer" 
             // have the yellow color take effect when hovered, or else is grey
-            color={ value <= (hover || rating) ? "#f9d02f": "#c7c7c7"}
+            color={ value <= (hover || rating) ? "#FFD700": "#504F4C"}
             onMouseEnter={() => setHover(value)}
             onMouseLeave={() => setHover(null)}
           />
@@ -44,7 +44,7 @@ function Review() {
     setUser(event.target.value)
   }
 
-  function save(name, review, rating) {
+  function save(name, review, rating, make, model, year) {
     setUser("")
     setReview("")
     setRating(null)
@@ -52,7 +52,10 @@ function Review() {
     .post("http://localhost:3001/reviews", {
       user: user,
       description: review,
-      rating: rating
+      rating: rating,
+      make: props.make,
+      model: props.model,
+      year: props.year
     })
     .then((res) => {
       setUser(name)
@@ -68,22 +71,23 @@ function Review() {
 
   return (
     <h1>
-      This is the Review
       <form className='form' onSubmit={event => event.preventDefault()}>
-        <FormControl isRequired width={400}>
-          <FormLabel>Name</FormLabel>
+        <FormControl isRequired requiredIndicator>
+          <FormLabel>Name: </FormLabel>
           <Input placeholder="Please enter name" value={user} onChange={enterName}/>
-          <FormLabel>Review</FormLabel>
+          <FormLabel>Review: </FormLabel>
         <Textarea
           className="input"
           value = {review}
           onChange={enterReview}
           placeholder="Please input review"
         />
+        <span className="star-btn">
         <div className="stars">{stars}</div>
-        <Button colorScheme="teal" variant="outline" onClick={() => {save(user, review, rating)}} >
+        <Button className="submit-btn" colorScheme="teal" variant="outline" onClick={() => {save(user, review, rating, props.make, props.model, props.year)}} >
           Submit
         </Button>
+        </span>
         </FormControl>
       </form>
     </h1>

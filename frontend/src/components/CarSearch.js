@@ -115,6 +115,7 @@ function CarSearch() {
         {/* <div className="button-div" style={{ display: carForm ? "flex" : "none" }}> */}
         <div className="button-div">
           <Button
+          className="animated-border-button"
             colorScheme="teal"
             variant="outline"
             size="xs"

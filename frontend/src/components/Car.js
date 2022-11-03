@@ -4,21 +4,15 @@ import Review from "./Review";
 import PastReviewList from "./PastReviewList";
 import "./Car.css";
 import { SelectedCarContext } from "../Context/SelectedCarContext";
+import { FaPen } from "react-icons/fa"
 
 
 function Car() {
-  const [cars, setCars] = useState([]);
+  const [ cars, setCars ] = useState([]);
   const { make, models, car, year, photo, setPhoto } = useContext(SelectedCarContext);
 
-  //const [id, setId] = useState([]);
-  // console.log("car in car.js", car);
   useEffect(() => {
-    // axios
-    //   .get("http://localhost:3001/cars")
-    //   .then((res) => JSON.parse(JSON.stringify(res)))
-    //   .then((data) => {
-    //     setCars(data.data);
-    //   });
+
     axios.all([
       axios.get("http://localhost:3001/cars"),
       axios.get(
@@ -50,68 +44,49 @@ function Car() {
     }
   };
   const id = idGet(getID);
-  // const carData = cars.map((car, index) => {
-  //   if (make == car.make && models == car.model) {
-  //     // setId(car.id);
-  //     return (
-  //       <>
-  //         <div className="car-container">
-  //           <div className="photo"> <img alt="" width={200} height={200} src={car.photo_url} /></div>
-  //           <div className="carDetails" key={index}>
-  //             <span className="car-text"><strong><font size="+2">Vehicle Information</font></strong></span>
-  //             <span>__________________________</span>
-  //             <h2 className="make">Make: <strong>{car.make}</strong></h2>
-  //             <h2 className="model">Model: <strong>{car.model}</strong></h2>
-  //             <h2 className="class">Class: <strong>{car.class}</strong></h2>
-  //             <h2 className="year">Year: <strong>{car.year}</strong></h2>
-  //             <h2 className="city-mpg">City MPG: <strong>{car.city_mpg}</strong></h2>
-  //           </div>
-  //           <hr />
-  //         </div>
-  //       </>
-  //     );
-  //   }
-  // });
 
-
-
-
-  // axios.get("/api/cars"),
-  // axios.get("/api/reviews")
-
-
-  // function capitalizeFirstLetter(string) {
-  //   return string.charAt(0).toUpperCase() + string.slice(1);
-  // }
+ //getting transmission to render full word automatic instead of "a"
+  const transmission = function(car) {
+    if(car.transmission == "a" || car.transmission == "A") {
+      return "Automatic"
+    }
+      return "Manual"
+    }
+  
 
   return (
     <SelectedCarContext.Provider value={cars}>
       <h1 className="car-details">
         <div className="car-container">
-          <div className="photo"> <img alt="" width={1000} height={1000} src={photo} /></div>
+          <div className="photo"> <img alt="" src={photo} /></div>
           <div className="carDetails">
-            <span className="car-text"><strong><font size="+2">Vehicle Information</font></strong></span>
-            <span>__________________________</span>
-            <h2 className="make">Make: <strong>{car.make}</strong></h2>
-            <h2 className="model">Model: <strong>{car.model}</strong></h2>
-            <h2 className="class">Class: <strong>{car.class}</strong></h2>
+            <span className="car-text"><strong><font size="+3">Vehicle Information</font></strong></span>
+            <span>___________________________________</span>
+            <br></br>
+            <h2 className="make">Make: <strong style={{textTransform:"uppercase"}}>{car.make}</strong></h2>
+            <h2 className="model">Model: <strong style={{textTransform:"uppercase"}}>{car.model}</strong></h2>
+            <h2 className="class">Class: <strong style={{textTransform:"uppercase"}}>{car.class}</strong></h2>
             <h2 className="year">Year: <strong>{car.year}</strong></h2>
             <h2 className="city-mpg">MPG: <strong>{car.city_mpg}</strong></h2>
             <h2 className="cylinders">Cylinders: <strong>{car.cylinders}</strong></h2>
             <h2 className="displacement">Displacement: <strong>{car.displacement}</strong></h2>
-            <h2 className="drive">Drive: <strong>{car.drive}</strong></h2>
-            <h2 className="fuel-type">Fuel Type: <strong>{car.fuel_type}</strong></h2>
-            <h2 className="transmission">Transmission: <strong>{car.transmission}</strong></h2>
-          </div>
-          <div className="both-reviews">
-            <span className="review">
-              <Review />
-            </span>
-            <span className="past-review">
-              <PastReviewList id={id} />
-            </span>
+            <h2 className="drive">Drive: <strong style={{textTransform:"uppercase"}}>{car.drive}</strong></h2>
+            <h2 className="fuel-type">Fuel Type: <strong style={{textTransform:"uppercase"}}>{car.fuel_type}</strong></h2>
+            <h2 className="transmission">Transmission: <strong style={{textTransform:"uppercase"}}>{transmission(car)}</strong></h2>
           </div>
         </div>
+        <div className="both-reviews">
+          <div ><span className="review-title"><FaPen/>  Write a review</span>
+            <span className="review">
+              <Review make={make.toLowerCase()} model={models.toLowerCase()} year={year}/>
+            </span>
+          </div>
+            <span className="past-review">
+            <span className="past-review-title" style={{fontWeight:"bold", fontSize:"larger"}}>Consumer reviews</span>
+            <font size="3">Read what other owners think about the {car.year} {car.make} {car.model}.</font>
+            <PastReviewList make={make.toLowerCase()} model={models.toLowerCase()} year={year} />
+            </span>
+          </div>
       </h1>
 
 

@@ -4,3 +4,64 @@
   position: relative;
   z-index: 3
 }
+
+.css-1kp110w, .css-1bki5fo {
+  background-color: #a9b4a4a8 !important;
+  border: none !important;
+  margin-bottom: 20px ;
+  resize: none;
+  width: 33rem !important;
+}
+
+.css-1bki5fo {
+  height: 15rem !important;
+}
+
+.star-btn {
+  display: flex;
+  margin-left: 3rem;
+}
+
+.stars {
+  margin-bottom: 5px;
+
+}
+
+.submit-btn {
+  width: 5rem;
+  margin-left: 13.5rem ;
+  font-weight: bold;
+  padding-top: 4px !important;
+  border: none;
+  color: #A9B4A4;
+  outline: none ;
+  padding: 12px 40px 10px;
+  position: relative;
+}
+
+.submit-btn:before,
+.submit-btn:after {
+  border: 0 solid transparent;
+  transition: all 0.3s;
+  content: '';
+  height: 0;
+  position: absolute;
+  width: 24px;
+}
+
+.submit-btn:before {
+  border-top: 2px solid #504F4C;
+  right: 0;
+  top: -4px;
+}
+
+.submit-btn:after {
+  border-bottom: 2px solid #504F4C;
+  bottom: -4px;
+  left: 0;
+}
+
+.submit-btn:hover:before,
+.submit-btn:hover:after {
+  width: 100%;
+}

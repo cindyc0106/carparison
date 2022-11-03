@@ -15,7 +15,7 @@
 .review-input {
   display: flex;
   align-items: right;
-  padding-left: 200px;
+  padding-left: 100px;
 }
 
 h2 {
@@ -26,17 +26,19 @@ h2 {
 .photo {
   display: flex;
   justify-content: flex-start;
-  margin-right: 25px;
-
+  height: 30rem;
+  width: 48rem;
+  margin-left: 1.5rem;
 }
 
+
 .car-details {
-  margin: 25px;
+  /* margin: 25px; */
   position: relative;
   z-index: 4;
   opacity: 1;
   size: 25px;
-
+  
 }
 
 li {
@@ -47,7 +49,7 @@ li {
 .carDetails {
   display: flex;
   flex-direction: column;
-
+  width: 32rem;
 }
 
 .car-container {
@@ -59,8 +61,8 @@ li {
 }
 
 .model,
-.year {
-  background-color: #F2F1EF;
+.year, .cylinders, .drive, .transmission {
+  background-color: #a9b4a4a8;
   border-radius: 5px;
   padding-left: 4px;
 }
@@ -69,16 +71,51 @@ li {
 .class {
   padding-left: 4px;
 }
-/* 
-.both-reviews {
-  display:flex;
 
+.both-reviews {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .past-review {
-  width: 35rem
+  width: 575px;
 }
+
 .both-reviews {
+  margin-left: 4rem;
+}
+
+.review-title {
+  font-weight: bold;
   display: flex;
-  justify-content: center;
-} */
+  font-size: larger;
+  margin-left: 0.5rem;
+  background-color: #504F4C;
+  color: #E5DAD0;
+  width: 11rem;
+  align-items: center;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.past-review-title {
+  display: flex;
+  flex-direction: column;
+  font-size: larger;
+  background-color: #504F4C;
+  color: #E5DAD0;
+  width: 13rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.make, .model, .class, .year, .mpg, .cylinders, .displacement, .drive, .fuel-type, .transmission {
+  padding: 3px;
+  font-size: large;
+  padding-bottom: 3px;
+}
+
+.review {
+  margin-top: 0.50rem;
+}
