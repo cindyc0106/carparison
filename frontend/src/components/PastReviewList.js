@@ -4,7 +4,7 @@ import { Box, Heading, Text, Divider, ListItem, List, Avatar, Flex } from "@chak
 import { getUserById } from "../helpers/helpers";
 import { FaStar } from "react-icons/fa";
 //import Review from "./Review";
-// import "./PastReviewList.css";
+import "./PastReviewList.css";
 
 
 function PastReviewList(props) {
