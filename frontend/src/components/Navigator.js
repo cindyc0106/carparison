@@ -24,7 +24,7 @@ function Navigator() {
     setSearch(searchCar);
     axios
       .get("http://localhost:3001/cars_lists")
-      .then((res) => JSON.parse(JSON.stringify(res.data)))
+      .then((res) => res.data)
       .then((data) => {
         const newCar = data.filter((value) => {
           return (
