@@ -55,7 +55,7 @@ function CarSearch() {
   // CAR YEAR
   const yearList = () => {
     const year = [];
-    for (let i = 1990; i <= 2021; i++) {
+    for (let i = 2021; i >= 1990; i--) {
       year.push(i);
     }
     return year;

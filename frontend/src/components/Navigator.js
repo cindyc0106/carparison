@@ -80,7 +80,6 @@ function Navigator() {
             <div className="carSearch">
               {query.map((value, key) => {
                 const car = `${value.make} ${value.model}`;
-                // console.log('year', value)
                 return (
                   <span
                     className="carResults"
