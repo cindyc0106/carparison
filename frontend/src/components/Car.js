@@ -40,8 +40,6 @@ function Car() {
     return "Manual";
   };
 
-  console.log('car', car);
-  console.log('photo', photo);
   return (
     <SelectedCarContext.Provider value={cars}>
       <h1 className="car-details">
@@ -52,8 +50,8 @@ function Car() {
               <span className="car-text"><strong><font size="+3">Vehicle Information</font></strong></span>
               <span>___________________________________</span>
               <br></br>
-              <h2> <strong>No car data for vehicle </strong></h2>
-              <h2> <strong>Please select another vehicle </strong></h2>
+              <h2> <strong>No car data for vehicle. </strong></h2>
+              <h2> <strong>Please select another vehicle! </strong></h2>
             </div>
           )}
           {car && (
