@@ -8,6 +8,7 @@ import Car from "./components/Car";
 import Email from "./components/Email";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import KommunicateChat from "./components/Chat";
 
 import { Route, Routes } from "react-router-dom";
 
@@ -39,6 +40,7 @@ function App() {
           <Route path="/review" element={<Review />} />
           <Route path="/pastreviewlist" element={<PastReviewList id={1} />} />
         </Routes>
+        <KommunicateChat/>
       <Email/>
       </div>
     </CarContextProvider>
