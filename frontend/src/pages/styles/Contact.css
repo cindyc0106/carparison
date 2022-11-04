@@ -1,7 +1,68 @@
 .contact {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-around;
   position: relative;
   z-index: 4;
   opacity: 1 ;
+  
+}
+
+.title {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.description {
+  padding: 1em;
+}
+
+.email-link {
+  padding: 1em;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  justify-content: center;
+  align-items: center;
+}
+
+.ig {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  align-items: center;
+  padding: 0.5em;
+}
+
+.fb {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  align-items: center;
+  padding: 0.5em;
+}
+.yt {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  align-items: center;
+  padding: 0.5em;
+}
+.tw {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  align-items: center;
+  padding: 0.5em;
+}
+.li {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  align-items: center;
+  padding: 0.5em;
 }
