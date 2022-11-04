@@ -17,13 +17,13 @@ import { CarContextProvider } from "./Context/SelectedCarContext";
 function App() {
 
   //background image rotation
-  let c = 45;
-  function draw() {
-    document.documentElement.style.setProperty('--direction', c++ + 'deg');
-    requestAnimationFrame(draw);
-  }
+  // let c = 45;
+  // function draw() {
+  //   document.documentElement.style.setProperty('--direction', c++ + 'deg');
+  //   requestAnimationFrame(draw);
+  // }
 
-  requestAnimationFrame(draw);
+  // requestAnimationFrame(draw);
   return (
     <ChakraProvider>
     <CarContextProvider>
@@ -39,6 +39,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/review" element={<Review />} />
           <Route path="/pastreviewlist" element={<PastReviewList id={1} />} />
+          <Route path="*" element={<CarSearch />} />
         </Routes>
         <KommunicateChat/>
       <Email/>

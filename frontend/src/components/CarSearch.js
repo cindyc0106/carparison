@@ -19,12 +19,12 @@ function CarSearch() {
     setYear,
     // car,
     setCar
-  } = useContext(SelectedCarContext)
+  } = useContext(SelectedCarContext);
 
   const [cars, setCars] = useState([]);
 
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -50,15 +50,16 @@ function CarSearch() {
     const carModels = modelsArr.map((car) => car.model); // array of car modelss with that specific make
     return carModels;
   };
+  const modelsFiltered = filteredCarModels(make).map((model, key) => <option key={key}>{model}</option>);
 
   // CAR YEAR
-  const yearList  = () => {
+  const yearList = () => {
     const year = [];
     for (let i = 1990; i <= 2021; i++) {
       year.push(i);
     }
     return year;
-  }
+  };
   const years = yearList();
   const yearFiltered = years.map((year, key) => <option key={key} className="option">{year}</option>);
 
@@ -68,11 +69,11 @@ function CarSearch() {
     axios
       .get(`http://localhost:3001/cars/${make.toLowerCase()}/${models.toLowerCase()}/${year}`)
       .then((res) => {
-        setCar(res.data)
+        setCar(res.data);
 
       })
-      .catch((err)=> console.log("error:", err))
-  }
+      .catch((err) => console.log("error:", err));
+  };
 
   if (make) {
     filteredCarModels();
@@ -100,26 +101,26 @@ function CarSearch() {
               onChange={(e) => {
                 setModels(e.target.value);
               }}>
-              {filteredCarModels(make).map((model, key) => <option key={key}>{model}</option>)}
+              {modelsFiltered}
             </Select>
           </FormControl>
 
           <FormControl>
             <FormLabel>Year</FormLabel>
             <Select placeholder="Select Year" onChange={(e) => {
-                setYear(e.target.value);
-              }}>{yearFiltered}</Select>
+              setYear(e.target.value);
+            }}>{yearFiltered}</Select>
           </FormControl>
           <br />
         </div>
         {/* <div className="button-div" style={{ display: carForm ? "flex" : "none" }}> */}
         <div className="button-div">
           <Button
-          className="animated-border-button"
+            className="animated-border-button"
             colorScheme="teal"
             variant="outline"
             size="xs"
-            onClick={() => {clickHandler()}}
+            onClick={() => { clickHandler(); }}
           ><BiSearch />  Search
 
           </Button>
