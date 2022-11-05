@@ -28,8 +28,8 @@ function App() {
     <ChakraProvider>
     <CarContextProvider>
       <div className="App">
-      <div className="background">      </div>
-      <div className="foreground">      </div>
+      {/* <div className="background">      </div>
+      <div className="foreground">      </div> */}
         <Navigator />
 
         <Routes>

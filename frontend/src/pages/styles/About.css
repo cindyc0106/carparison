@@ -5,3 +5,21 @@
   z-index: 4;
   opacity: 1 ;
 }
+
+.icon {
+  display: flex;
+  justify-content: center;
+}
+
+.chakra-heading {
+  display: flex;
+  justify-content: center;
+}
+.chakra-text {
+  display: flex;
+  justify-content: center;
+}
+.chakra-container {
+  display: flex;
+  justify-content: center;
+}
