@@ -1,25 +1,11 @@
 import './styles/Contact.css';
 import { EmailIcon, Icon } from '@chakra-ui/icons';
 import { TiSocialFacebook, TiSocialInstagram, TiSocialYoutube, TiSocialTwitter, TiSocialLinkedin } from 'react-icons/ti'
-// import { Stack, HStack, VStack, Box } from '@chakra-ui/react';
+
 
 function Contact() {
   return (
     <div className='contact'>
-      
-
-      {/* <HStack spacing='50px'>
-        <Box w='140px' h='140px' bg='yellow.200'>
-          This is contact!
-        </Box>
-        <Box w='140px' h='140px' bg='tomato'>
-          For all inquires about our services, products, sponsorships, advertisements etc. email us at:
-        </Box>
-        <Box w='140px' h='140px' bg='pink.100'>
-          <a href='mailto: carparisonproject@gmail.com'>carparisonproject@gmail.com</a>
-        </Box>
-      </HStack> */}
-
       
       <h1 className='title'>Contact Us</h1>
       
