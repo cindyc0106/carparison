@@ -1,6 +1,9 @@
 import './styles/About.css';
 import {Stack, Text, Box, Heading, Image, Container } from '@chakra-ui/react';
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import cindyphoto from './image/cindyphoto.jpeg'
+import omidphoto from './image/omidphoto.jpeg'
+import kevinphoto from './image/kevinphoto.jpeg'
 
 
 
@@ -13,7 +16,7 @@ const cindy = (
           borderRadius='full'
           boxSize='75px'
           objectFit='cover'
-          src='https://media-exp1.licdn.com/dms/image/C5603AQH1y641UuxySw/profile-displayphoto-shrink_800_800/0/1654640285145?e=1672876800&v=beta&t=G4_GHIEj7TZvEzB8Yoqa5G8loyDElV3PWtrU2TfZyQs'
+          src={cindyphoto}
           alt='Cindy Chen'
         />
       </Container>
@@ -38,7 +41,7 @@ const omid = (
           borderRadius='full'
           boxSize='75px'
           objectFit='cover'
-          src='https://media-exp1.licdn.com/dms/image/D5603AQHsV5c4xwzpyw/profile-displayphoto-shrink_200_200/0/1666390014857?e=1672876800&v=beta&t=-w9JRMTluZl5Coy984oJ5-URG-M4muMO35O01rQjKHA'
+          src={omidphoto}
           alt='Omid Ghahramani'
         />
       </Container>
@@ -63,7 +66,7 @@ const kevin = (
           borderRadius='full'
           boxSize='75px'
           objectFit='cover'
-          src='https://media-exp1.licdn.com/dms/image/C5603AQE-oTf-g_a9TA/profile-displayphoto-shrink_800_800/0/1660105273985?e=1672876800&v=beta&t=JQ4XFf6lvb79jREHgwCNyNEZGPsa-8gXbZf2x_YExVg'
+          src={kevinphoto}
           alt='Kevin Ly'
         />
       </Container>
@@ -83,7 +86,7 @@ const kevin = (
 function Feature({ title, desc, ...rest }) {
   return (
     <Box p={4} height="200px" shadow='md' borderWidth='1px' {...rest}>
-      <Heading as='u' fontSize='xs'>{title}</Heading>
+      <Heading as='u' color='#a9b4a4' fontSize='xs'>{title}</Heading>
       <Text mt={4}>{desc}</Text>
     </Box>
   );
