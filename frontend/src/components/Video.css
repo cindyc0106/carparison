@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding-top: 50px;
 }
 
 .video-header {
@@ -30,26 +31,32 @@
   height: 150px;
 }
 
-.ytp-large-play-button svg {
-  height: 50%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
 @media only screen and (max-width: 1100px) {
   #video-main {
     font-size: smaller;
     padding: 1px;
-    width: 300px;
+    width: 600px;
     height: 250px;
   }
   
   #video {
     font-size: smaller;
     padding: 1px;
-    width: 250px;
-    height: 125px;
+    width: 300px;
+    height: 200px;
+  }
+
+  .video-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .video-second {
+    display: flex;
+  }
+
+  .video-third {
+    display: flex;
   }
 }

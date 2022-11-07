@@ -14,11 +14,11 @@ function Video() {
         <br></br>
         <div className='video-container'>
           <iframe id="video-main" src="https://www.youtube.com/embed/6iIvuip6ccE" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-          <div>
+          <div className='video-second'>
             <iframe id="video" src="https://www.youtube.com/embed/INRncaJ6Dxc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             <iframe id="video" src="https://www.youtube.com/embed/ENuhxcbIh-k" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           </div>
-          <div>
+          <div className='video-third'>
             <iframe id="video" src="https://www.youtube.com/embed/feD4svrFbWo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             <iframe id="video" src="https://www.youtube.com/embed/kpvfa6YFkgM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           </div>
