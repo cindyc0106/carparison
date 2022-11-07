@@ -9,7 +9,7 @@ import Email from "./components/Email";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import KommunicateChat from "./components/Chat";
-import Video from "./components/Video";
+// import Video from "./components/Video";
 
 import { Route, Routes } from "react-router-dom";
 
@@ -43,7 +43,6 @@ function App() {
           <Route path="*" element={<CarSearch />} />
         </Routes>
         <KommunicateChat/>
-        < Video />
       <Email/>
       </div>
     </CarContextProvider>
