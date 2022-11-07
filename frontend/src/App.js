@@ -9,6 +9,7 @@ import Email from "./components/Email";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import KommunicateChat from "./components/Chat";
+// import AverageReview from "./components/AverageReview";
 
 import { Route, Routes } from "react-router-dom";
 
@@ -16,14 +17,14 @@ import { CarContextProvider } from "./Context/SelectedCarContext";
 
 function App() {
 
-  //background image rotation
-  let c = 45;
-  function draw() {
-    document.documentElement.style.setProperty('--direction', c++ + 'deg');
-    requestAnimationFrame(draw);
-  }
+//   //background image rotation
+//   let c = 45;
+//   function draw() {
+//     document.documentElement.style.setProperty('--direction', c++ + 'deg');
+//     requestAnimationFrame(draw);
+//   }
 
-  requestAnimationFrame(draw);
+//   requestAnimationFrame(draw);
   return (
     <ChakraProvider>
     <CarContextProvider>

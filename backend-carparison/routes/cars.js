@@ -36,7 +36,6 @@ require('dotenv').config();
     
     return axios.request(options)
     .then(function (response) {
-      console.log("response data:", response.data[0]);
       res.json(response.data[0])
     }).catch(function (error) {
       console.error(error);
