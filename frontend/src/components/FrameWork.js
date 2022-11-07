@@ -1,4 +1,4 @@
-import { FaReact, FaNodeJs, FaDatabase, FaBook } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaDatabase, FaBook, FaRegEnvelope, FaRegCreditCard, FaCarSide, FaCarAlt, FaRocketchat } from "react-icons/fa";
 import { Stack, Text, Box, Heading, Image, Container } from '@chakra-ui/react';
 import './FrameWork.css';
 
@@ -10,6 +10,9 @@ const frontEnd = (
       </Container>
       <Container>
         <FaBook /> <Text> &nbsp; Chakra UI</Text>
+      </Container>
+      <Container>
+        <FaRegEnvelope /> <Text> &nbsp; EmailJS </Text>
       </Container>
     </Stack>
   </>
@@ -33,9 +36,20 @@ const backEnd = (
 
 const API = (
   <>
-    <Stack width={460}>
+    <Stack direction='column' width={228}>
       <Container>
-        <FaReact /> <Text> &nbsp; React</Text>
+        <FaRegCreditCard /> <Text> &nbsp; Stripe</Text>
+      </Container>
+      <Container>
+        <FaCarSide /> <Text> &nbsp; API Ninjas Cars </Text>
+      </Container>
+    </Stack>
+    <Stack direction='column' width={228}>
+      <Container>
+        <FaRocketchat /> <Text> &nbsp; Kommunicate </Text>
+      </Container>
+      <Container>
+        <FaCarAlt /> <Text> &nbsp; Imagin Studio </Text>
       </Container>
     </Stack>
   </>
@@ -55,11 +69,11 @@ function StackExTop() {
   return (
     <Stack id="first" spacing={4} direction='row'>
       <Feature
-        title='Front-End'
+        title='Client'
         desc={frontEnd}
       />
       <Feature
-        title='Back-End'
+        title='Server'
         desc={backEnd}
       />
     </Stack>
