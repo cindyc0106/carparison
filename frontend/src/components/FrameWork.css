@@ -1,0 +1,19 @@
+.framework {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px red solid; */
+}
+.API {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px red solid; */
+}
+#first {
+  /* border: 1px blue solid; */
+  display: flex;
+  justify-content: center;
+  width: 500px;
+}
+

@@ -1,11 +1,42 @@
-import { FaGithubSquare, FaLinkedin, FaReact } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaDatabase, FaBook } from "react-icons/fa";
 import { Stack, Text, Box, Heading, Image, Container } from '@chakra-ui/react';
-
+import './FrameWork.css';
 
 const frontEnd = (
   <>
-    <Stack>
+    <Stack direction='column' width={200}>
+      <Container>
+        <FaReact /> <Text> &nbsp; React</Text>
+      </Container>
+      <Container>
+        <FaBook /> <Text> &nbsp; Chakra UI</Text>
+      </Container>
+    </Stack>
+  </>
+);
 
+const backEnd = (
+  <>
+    <Stack direction='column' width={200}>
+      <Container>
+        <FaNodeJs /> <Text> &nbsp; ExpressJS</Text>
+      </Container>
+      <Container>
+        <FaNodeJs /> <Text> &nbsp; NodeJS</Text>
+      </Container>
+      <Container>
+        <FaDatabase /> <Text> &nbsp; PostgreSQL</Text>
+      </Container>
+    </Stack>
+  </>
+);
+
+const API = (
+  <>
+    <Stack width={460}>
+      <Container>
+        <FaReact /> <Text> &nbsp; React</Text>
+      </Container>
     </Stack>
   </>
 );
@@ -20,20 +51,27 @@ function Feature({ title, desc, ...rest }) {
   );
 }
 
-function StackEx() {
+function StackExTop() {
   return (
-    <Stack spacing={8} direction='column'>
+    <Stack id="first" spacing={4} direction='row'>
       <Feature
         title='Front-End'
         desc={frontEnd}
       />
       <Feature
         title='Back-End'
-        desc='You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process'
+        desc={backEnd}
       />
+    </Stack>
+  );
+}
+
+function StackExBottom() {
+  return (
+    <Stack spacing={4} direction='column'>
       <Feature
         title='APIs'
-        desc='You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process'
+        desc={API}
       />
     </Stack>
   );
@@ -41,9 +79,15 @@ function StackEx() {
 
 function FrameWork() {
   return (
-    <div className="framework">
-      <StackEx />
-    </div>
+    <>
+      <div className="framework">
+        <StackExTop />
+      </div>
+      <br></br>
+      <div className='API'>
+        <StackExBottom />
+      </div>
+    </>
   );
 }
 
