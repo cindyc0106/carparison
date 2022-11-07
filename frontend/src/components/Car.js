@@ -82,7 +82,7 @@ function Car() {
           </div>
           <span className="past-review">
             <span className="past-review-title" style={{ fontWeight: "bold", fontSize: "larger" }}>Consumer reviews</span>
-            <font size="3">Read what other owners think about the {car.year} {car.make} {car.model}.</font>
+            {car ? <font size="3">Read what other owners think about the {car.year} {car.make} {car.model}.</font> : ""}
             <PastReviewList make={make.toLowerCase()} model={models.toLowerCase()} year={year} reset={review} />
           </span>
         </div>

@@ -33,7 +33,7 @@ function AverageReview(props) {
  
    return <>
    <div className="average">
-    <strong>Average Rating: </strong> {stars}
+    {averageReview > 0 ? <><strong>Average Rating:</strong>{stars}</> : ""}
   </div>
   </>
 }
