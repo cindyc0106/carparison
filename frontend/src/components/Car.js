@@ -5,7 +5,7 @@ import PastReviewList from "./PastReviewList";
 import "./Car.css";
 import { SelectedCarContext } from "../Context/SelectedCarContext";
 import { FaPen } from "react-icons/fa";
-import AverageReview from "./AverageReview";
+
 
 
 function Car() {
@@ -81,7 +81,7 @@ function Car() {
             </span>
           </div>
           <span className="past-review">
-            <span className="past-review-title" style={{ fontWeight: "bold", fontSize: "larger" }}>Consumer reviews <AverageReview make={make} model={models} year={year} /></span>
+            <span className="past-review-title" style={{ fontWeight: "bold", fontSize: "larger" }}>Consumer reviews</span>
             <font size="3">Read what other owners think about the {car.year} {car.make} {car.model}.</font>
             <PastReviewList make={make.toLowerCase()} model={models.toLowerCase()} year={year} reset={review} />
           </span>
