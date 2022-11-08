@@ -72,3 +72,9 @@
 .animated-border-button:hover:after {
   width: 100%;
 }
+
+@media screen and (max-width: 1010px){
+  #car-form {
+    flex-direction: column;
+  }
+}

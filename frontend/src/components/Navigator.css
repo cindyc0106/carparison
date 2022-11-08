@@ -4,7 +4,12 @@
   margin: 0 15px 0px 15px;
   position: relative;
   z-index: 4;
-  opacity: 1 ;
+  opacity: 1;
+  height: 150px;
+}
+
+.menu {
+  display: none;
 }
 
 
@@ -74,4 +79,45 @@
 
 .searchButton {
   z-index: 4
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .chakra-button.coffee-button {
+    position: absolute;
+    top: 20px;
+    right: 160px;
+  }
+}
+
+@media only screen and (max-width: 700px){
+  .nav {
+    display:none;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    margin: 45px 15px 0px 15px;
+    position: relative;
+    z-index: 4;
+    opacity: 1 ;
+    margin-bottom: 5rem;
+    /* background-color: aqua; */
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: auto;
+    padding-top: 1rem;
+  }
+
+  .searchBar {
+    flex-direction: column;
+  }
+
+  .chakra-breadcrumb {
+    display: flex;
+    margin-right: 0px;
+    margin-top: 1rem;
+  }
 }

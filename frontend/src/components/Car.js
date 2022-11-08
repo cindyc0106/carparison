@@ -75,14 +75,14 @@ function Car() {
 
         </div>
         <div className="both-reviews">
-          <div ><span className="review-title"><FaPen />  Write a review</span>
+          <div className="new-review"><span className="review-title"><FaPen />  Write a review</span>
             <span className="review">
               <Review make={make.toLowerCase()} model={models.toLowerCase()} year={year} reset={reset} />
             </span>
           </div>
           <span className="past-review">
             <span className="past-review-title" style={{ fontWeight: "bold", fontSize: "larger" }}>Consumer reviews</span>
-            {car ? <font size="3">Read what other owners think about the {car.year} {car.make} {car.model}.</font> : ""}
+            {car ? <font className="past-review-desc" size="3">Read what other owners think about the {car.year} {car.make} {car.model}.</font> : ""}
             <PastReviewList make={make.toLowerCase()} model={models.toLowerCase()} year={year} reset={review} />
           </span>
         </div>

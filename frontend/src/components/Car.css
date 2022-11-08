@@ -50,10 +50,12 @@ li {
   display: flex;
   flex-direction: column;
   width: 32rem;
+  margin-right: 7rem;
 }
 
 .car-container {
   display: flex;
+  justify-content: space-evenly;
 }
 
 .car-text {
@@ -78,6 +80,10 @@ li {
 }
 
 .past-review {
+  width: 575px;
+}
+
+.new-review {
   width: 575px;
 }
 
@@ -109,6 +115,11 @@ li {
   padding: 0.5rem 0.5rem 0.5rem 1rem;
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.past-review-desc {
+  margin-left: 1rem;
 }
 
 .make, .model, .class, .year, .mpg, .cylinders, .displacement, .drive, .fuel-type, .transmission {
@@ -130,3 +141,77 @@ li {
 .css-1uzhoyv {
   width: 30rem;
 }
+
+@media only screen and (max-width: 1419px){
+  .car-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 1rem;
+    position: relative;
+    z-index: 4;
+    opacity: 1 ;
+    padding-bottom: 25px;
+    min-width: max-content;
+    width: auto;
+  }
+
+  .both-reviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    position: relative;
+    z-index: 4;
+    opacity: 1 ;
+    padding: 5px;
+    min-width: max-content;
+    width:auto;
+  }
+
+  .past-review {
+    align-items: center;
+    
+  }
+
+  .new-review {
+    margin-bottom: 4rem;
+    /* width: auto; */
+  }
+
+  .car-details {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carDetails {
+    margin-left: 4rem;
+  }
+}
+
+/* @media screen and (max-width: 820px) {
+  .car-container {
+    max-width: 500px;
+    margin-left: 1%;
+  }
+  .carDetails {
+    margin-right: 50rem;
+    margin-left: 0%;
+  }
+  .photo {
+    width: 48rem !important;
+    margin-left: 0%;
+  }
+
+  .past-review {
+    width: 390px;
+  }
+
+  .car-details {
+    width: 100%;
+  }
+
+  .both-reviews {}
+} */
