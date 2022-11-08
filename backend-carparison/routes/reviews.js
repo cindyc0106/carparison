@@ -19,7 +19,7 @@ const db = require('../db');
   })
 
 router.post('/', (req, res) => {
-  console.log("response from react:", res.req.body)
+
   const description = res.req.body.description
   const rating = res.req.body.rating
   const user = res.req.body.user

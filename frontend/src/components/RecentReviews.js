@@ -19,13 +19,14 @@ export default function RecentReviews() {
       });
   }, [setRecentReview]);
 
- const show = recentReview.map(review => {
+ const show = recentReview.map((review, index) => {
   
   const stars = [...Array(review.rating)].map((star, index) => {
 
     return (
 
           <FaStar 
+            key={index}
             size={25} 
             color={"#FFD700"}
           />
@@ -36,7 +37,7 @@ export default function RecentReviews() {
   const faStar = <FaStar size={25} color={"#504F4C"}/>
 
   return (
-    <span className="each-review">
+    <span className="each-review" key={index}>
       <div><strong style={{color:"#443D45"}}>{review.user_name}{" "}</strong> <small>wrote a review on</small></div>
     <div ><strong>{review.car_make.toUpperCase()}{" "}{review.car_model.toUpperCase()}{" "}{review.car_year}</strong></div>
       {review.rating === 5 && <div className="stars">{stars}</div>}
