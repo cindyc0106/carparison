@@ -85,7 +85,7 @@ function CarSearch() {
         {/* <div id="car-form" style={{ display: carForm ? "flex" : "none" }}> */}
         <div id="car-form" >
           <FormControl>
-            <FormLabel>Make</FormLabel>
+            <FormLabel><strong>Make</strong></FormLabel>
             <Select
               placeholder="Select Make"
               onChange={(e) => {
@@ -96,7 +96,7 @@ function CarSearch() {
           </FormControl>
 
           <FormControl>
-            <FormLabel>Model</FormLabel>
+            <FormLabel><strong>Model</strong></FormLabel>
             <Select
               placeholder="Select Model"
               onChange={(e) => {
@@ -107,7 +107,7 @@ function CarSearch() {
           </FormControl>
 
           <FormControl>
-            <FormLabel>Year</FormLabel>
+            <FormLabel><strong>Year</strong></FormLabel>
             <Select placeholder="Select Year" onChange={(e) => {
               setYear(e.target.value);
             }}>{yearFiltered}</Select>
@@ -130,8 +130,8 @@ function CarSearch() {
         <div id="car-details"></div>
       </SelectedCarContext.Provider>
       </span>
-      < Video />
       <RecentReviews/>
+      < Video />
     </>
   );
 }
