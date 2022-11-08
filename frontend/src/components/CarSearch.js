@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-// import Car from "./Car";
-import Video from "./Video";
+import RecentReviews from "./RecentReviews";
+import Video from "./Video.js";
 import { FormControl, FormLabel, Select, Button } from "@chakra-ui/react";
 import "./CarSearch.css";
 import { BiSearch } from "react-icons/bi";
-
 import { SelectedCarContext } from "../Context/SelectedCarContext";
 
 function CarSearch() {
@@ -81,6 +80,7 @@ function CarSearch() {
   }
   return (
     <>
+    <span className="car-search-main">
       <SelectedCarContext.Provider value={cars}>
         {/* <div id="car-form" style={{ display: carForm ? "flex" : "none" }}> */}
         <div id="car-form" >
@@ -117,6 +117,7 @@ function CarSearch() {
         {/* <div className="button-div" style={{ display: carForm ? "flex" : "none" }}> */}
         <div className="button-div">
           <Button
+            style={{fontSize:"20px", fontWeight:"bolder"}}
             className="animated-border-button"
             colorScheme="teal"
             variant="outline"
@@ -128,8 +129,9 @@ function CarSearch() {
         </div>
         <div id="car-details"></div>
       </SelectedCarContext.Provider>
-
+      </span>
       < Video />
+      <RecentReviews/>
     </>
   );
 }

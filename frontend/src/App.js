@@ -11,13 +11,14 @@ import Contact from "./pages/Contact";
 import KommunicateChat from "./components/Chat";
 // import Video from "./components/Video";
 
+
 import { Route, Routes } from "react-router-dom";
 
 import { CarContextProvider } from "./Context/SelectedCarContext";
 
 function App() {
 
-  //background image rotation
+  // background image rotation
   // let c = 45;
   // function draw() {
   //   document.documentElement.style.setProperty('--direction', c++ + 'deg');

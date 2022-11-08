@@ -4,21 +4,39 @@ import {
   Input,
   Button,
 } from "@chakra-ui/react";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import axios from "axios";
 import "./Navigator.css";
 import { Link } from "react-router-dom";
 import { SelectedCarContext } from "../Context/SelectedCarContext";
 import { useNavigate } from "react-router-dom";
+import { HamburgerIcon } from "@chakra-ui/icons"
 
 import Coffee from "./Coffee";
 
 function Navigator() {
   const [query, setQuery] = useState([]);
   const [search, setSearch] = useState("");
+  
+  const [innerWidth, setInnerWidth] = useState(window.innerWidth)
   const { make, setMake, models, setModels, year, setYear, setCar } = useContext(SelectedCarContext);
   const navigate = useNavigate();
+  const width = () => {
+    if (innerWidth < 700) {
+      return false
+    }
+    return true;
+  }
+  const [isShown, setIsShown] = useState(width());
 
+  useEffect(() => {
+    const handleWidth = () => {
+      setInnerWidth(window.innerWidth)
+      setIsShown(width());
+    }
+    window.addEventListener('resize', handleWidth)
+  })
+  
   const handleSearch = (e) => {
     const searchCar = e.target.value;
     setSearch(searchCar);
@@ -50,12 +68,19 @@ function Navigator() {
       .catch((err) => console.log("error:", err));
   };
 
+  const menuChange = event => {
+    setIsShown(current => !current);
+  }
+
+
   return (
-    <nav>
-      <div className="nav">
+    <nav >
+      <div className="menu"><HamburgerIcon w={10} onClick={menuChange}/></div>
+      <div className="nav" style={{display: isShown ? 'flex' : 'none'}}>
         <h1>
           <img alt="" src="logo1.png" className="logo" />
         </h1>
+        
         <form className="form">
           <div className="searchBar">
             <Input
@@ -116,7 +141,9 @@ function Navigator() {
             <Link to="/contact"><strong>Contact</strong></Link>
           </BreadcrumbItem>
         </Breadcrumb>
+        
       </div>
+      
     </nav>
   );
 }

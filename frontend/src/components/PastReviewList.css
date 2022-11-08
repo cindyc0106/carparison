@@ -1,8 +1,9 @@
-.review {
+.old-review {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   z-index: 4;
   opacity: 1 ;
+  margin-left: 25px;
 }
