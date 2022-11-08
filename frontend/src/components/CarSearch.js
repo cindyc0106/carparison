@@ -80,6 +80,7 @@ function CarSearch() {
   }
   return (
     <>
+    <span className="car-search-main">
       <SelectedCarContext.Provider value={cars}>
         {/* <div id="car-form" style={{ display: carForm ? "flex" : "none" }}> */}
         <div id="car-form" >
@@ -116,6 +117,7 @@ function CarSearch() {
         {/* <div className="button-div" style={{ display: carForm ? "flex" : "none" }}> */}
         <div className="button-div">
           <Button
+            style={{fontSize:"20px", fontWeight:"bolder"}}
             className="animated-border-button"
             colorScheme="teal"
             variant="outline"
@@ -127,7 +129,7 @@ function CarSearch() {
         </div>
         <div id="car-details"></div>
       </SelectedCarContext.Provider>
-
+      </span>
       < Video />
       <RecentReviews/>
     </>

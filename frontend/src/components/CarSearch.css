@@ -4,6 +4,7 @@
   position: relative;
   z-index: 4;
   opacity: 1 ;
+  margin: 20px;
 }
 
 .chakra-form-control {
@@ -22,15 +23,15 @@
 .button-div {
   display: flex;
   justify-content: flex-end;
-  margin-right: 15px;
+  margin: 15px 35px 0 0;
  
 }
 
 .css-43x2eo {
-   position: relative;
+  position: relative;
   z-index: 1;
   height: 35px !important ;
-  font-size: 15px !important;
+  /* font-size: 15px !important; */
   background-color: #a9b4a400 !important;
   color: #504F4C !important;
   border-color: #504f4c00!important;
