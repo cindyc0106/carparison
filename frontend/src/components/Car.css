@@ -50,6 +50,7 @@ li {
   display: flex;
   flex-direction: column;
   width: 32rem;
+  margin-right: 7rem;
 }
 
 .car-container {
@@ -146,7 +147,7 @@ li {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    margin: 0 15px 25px 15px;
+    margin: 1rem;
     position: relative;
     z-index: 4;
     opacity: 1 ;
@@ -183,5 +184,31 @@ li {
     justify-content: center;
     align-items: center;
   }
+
+  .carDetails {
+    margin-left: 4rem;
+  }
 }
 
+@media screen and (max-width: 820px) {
+  .car-container {
+    max-width: 500px;
+    margin-left: 1%;
+  }
+  .carDetails {
+    /* margin-right: 50rem; */
+    /* margin-left: 0%; */
+  }
+  .photo {
+    width: 48rem;
+    margin-left: 0%;
+  }
+
+  .past-review {
+    /* width: 390px; */
+  }
+
+  .car-details {
+    width: 100%;
+  }
+}
