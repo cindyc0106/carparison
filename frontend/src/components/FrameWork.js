@@ -1,5 +1,5 @@
 import { FaReact, FaNodeJs, FaDatabase, FaBook, FaRegEnvelope, FaRegCreditCard, FaCarSide, FaCarAlt, FaRocketchat } from "react-icons/fa";
-import { Stack, Text, Box, Heading, Image, Container } from '@chakra-ui/react';
+import { Stack, Text, Box, Heading, Container } from '@chakra-ui/react';
 import './FrameWork.css';
 
 const frontEnd = (
