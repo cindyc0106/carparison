@@ -10,7 +10,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import KommunicateChat from "./components/Chat";
 // import Video from "./components/Video";
-import RecentReviews from "./components/RecentReviews";
+
 
 import { Route, Routes } from "react-router-dom";
 
@@ -43,7 +43,6 @@ function App() {
           <Route path="/pastreviewlist" element={<PastReviewList id={1} />} />
           <Route path="*" element={<CarSearch />} />
         </Routes>
-        <RecentReviews/>
         <KommunicateChat/>
       <Email/>
       </div>

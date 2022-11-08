@@ -9,7 +9,22 @@
   flex-direction: column;
   justify-content: flex-start;
   padding: 2rem;
-  background-color: #a9b4a477;
+  background-color: #d8cfd0b3;
   border-radius: 1rem ;
   margin: 2rem;
+  font-size:18px;
+  font-weight: lighter;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+}
+
+.stars {
+  display: flex;
+  justify-content: flex-start;
 }
