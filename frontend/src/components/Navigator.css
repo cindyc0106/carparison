@@ -81,23 +81,34 @@
   z-index: 4
 }
 
-@media screen and (max-width: 1010px){
-  /* .nav {
+@media only screen and (max-width: 700px){
+  .nav {
     display:none;
     flex-direction: column;
     justify-content:center;
-    align-items: center;
-    margin: 0 15px 0px 15px;
+    align-items:center;
+    margin: 45px 15px 0px 15px;
     position: relative;
     z-index: 4;
     opacity: 1 ;
-  } */
-  .logo {
-    display: block;
+    margin-bottom: 5rem;
+    /* background-color: aqua; */
   }
   .menu {
-    display: block;
+    display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
+    width: auto;
+    padding-top: 1rem;
+  }
+
+  .searchBar {
+    flex-direction: column;
+  }
+
+  .chakra-breadcrumb {
+    display: flex;
+    margin-right: 0px;
+    margin-top: 1rem;
   }
 }
