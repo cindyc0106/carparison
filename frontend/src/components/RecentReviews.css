@@ -28,3 +28,9 @@
   display: flex;
   justify-content: flex-start;
 }
+
+@media screen and (max-width: 1010px){
+  .recent-container {
+    flex-direction: column;
+  }
+}
