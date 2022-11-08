@@ -37,7 +37,7 @@ export default function RecentReviews() {
 
   return (
     <span className="each-review">
-      <div><strong style={{color:"#878384"}}>{review.user_name}{" "}</strong> <small>wrote a review on</small></div>
+      <div><strong style={{color:"#443D45"}}>{review.user_name}{" "}</strong> <small>wrote a review on</small></div>
     <div ><strong>{review.car_make.toUpperCase()}{" "}{review.car_model.toUpperCase()}{" "}{review.car_year}</strong></div>
       {review.rating === 5 && <div className="stars">{stars}</div>}
       {review.rating === 4 && <div className="stars">{stars}{faStar}</div>}
