@@ -1,0 +1,21 @@
+.framework {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.API {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#first {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+}
+
+@media only screen and (max-width: 390px) {
+  
+}

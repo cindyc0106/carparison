@@ -1,4 +1,5 @@
 import './styles/About.css';
+import FrameWork from '../components/FrameWork';
 import {Stack, Text, Box, Heading, Image, Container } from '@chakra-ui/react';
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import cindyphoto from './image/cindyphoto.jpeg'
@@ -86,7 +87,7 @@ const kevin = (
 function Feature({ title, desc, ...rest }) {
   return (
     <Box p={4} height="200px" shadow='md' borderWidth='1px' {...rest}>
-      <Heading as='u' color='#a9b4a4' fontSize='xs'>{title}</Heading>
+      <Heading as='u' fontSize='xs'>{title}</Heading>
       <Text mt={4}>{desc}</Text>
     </Box>
   );
@@ -113,9 +114,16 @@ function StackEx() {
 
 function About() {
   return (
+    <>
     <div className="about">
       <StackEx />
     </div>
+    <br>
+    </br>
+    <div>
+      <FrameWork />
+    </div>
+    </>
   );
 }
 
