@@ -44,4 +44,16 @@ router.get('/average/:make/:model/:year', (req, res) => {
     console.log('error', err.message)
   })
 })
+
+router.get('/recent', (req, res) => {
+
+  return db.query(
+    `SELECT * FROM reviews ORDER BY id DESC LIMIT 3;`)
+  .then((data) => {
+    res.json(data.rows)
+  })
+  .catch((err) => {
+    console.log('error', err.message)
+  })
+})
 module.exports = router;

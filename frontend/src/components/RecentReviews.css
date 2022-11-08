@@ -1,0 +1,15 @@
+.recent-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+.each-review {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 2rem;
+  background-color: #a9b4a477;
+  border-radius: 1rem ;
+  margin: 2rem;
+}
