@@ -75,3 +75,13 @@
 .searchButton {
   z-index: 4
 }
+
+
+@media only screen and (max-width: 1000px) {
+  
+  .chakra-button.coffee-button {
+    position: absolute;
+    top: 20px;
+    right: 160px;
+  }
+}
