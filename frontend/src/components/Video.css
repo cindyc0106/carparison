@@ -60,3 +60,19 @@
     display: flex;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  #video-main {
+    font-size: smaller;
+    padding: 1px;
+    width: 400px;
+    height: 150px;
+  }
+  
+  #video {
+    font-size: smaller;
+    padding: 1px;
+    width: 200px;
+    height: 150px;
+  }
+}
