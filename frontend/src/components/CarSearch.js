@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 // import Car from "./Car";
+import Video from "./Video";
 import { FormControl, FormLabel, Select, Button } from "@chakra-ui/react";
 import "./CarSearch.css";
 import { BiSearch } from "react-icons/bi";
@@ -127,6 +128,8 @@ function CarSearch() {
         </div>
         <div id="car-details"></div>
       </SelectedCarContext.Provider>
+
+      < Video />
     </>
   );
 }
