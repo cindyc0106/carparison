@@ -22,8 +22,6 @@ require('dotenv').config();
 
   router.get('/:make/:model/:year',(req, res)=>{
 
-    console.log("req params:", req.params)
-
      const options = {
       method: 'GET',
       url: 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars',
