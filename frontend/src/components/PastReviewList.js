@@ -64,7 +64,7 @@ function PastReviewList(props) {
     );
   })
   return (
-    <div className="review">
+    <div className="old-review">
 
     <h1> 
       <Box maxW='lg' maxH='lg' overflow='auto' borderWidth="0px" >

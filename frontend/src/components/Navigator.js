@@ -56,6 +56,7 @@ function Navigator() {
         <h1>
           <img alt="" src="logo1.png" className="logo" />
         </h1>
+        <div className="menu"><Button colorScheme="teal" /></div>
         <form className="form">
           <div className="searchBar">
             <Input

@@ -4,6 +4,7 @@
   position: relative;
   z-index: 4;
   opacity: 1 ;
+  
 }
 
 .chakra-form-control {
@@ -70,4 +71,10 @@
 .animated-border-button:hover:before,
 .animated-border-button:hover:after {
   width: 100%;
+}
+
+@media screen and (max-width: 1010px){
+  #car-form {
+    margin-top: 150px;
+  }
 }

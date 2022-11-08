@@ -4,7 +4,12 @@
   margin: 0 15px 0px 15px;
   position: relative;
   z-index: 4;
-  opacity: 1 ;
+  opacity: 1;
+  height: 150px;
+}
+
+.menu {
+  display: none;
 }
 
 
@@ -74,4 +79,25 @@
 
 .searchButton {
   z-index: 4
+}
+
+@media screen and (max-width: 1010px){
+  /* .nav {
+    display:none;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    margin: 0 15px 0px 15px;
+    position: relative;
+    z-index: 4;
+    opacity: 1 ;
+  } */
+  .logo {
+    display: block;
+  }
+  .menu {
+    display: block;
+    align-items: center;
+    justify-content: center;
+  }
 }
