@@ -190,25 +190,27 @@ li {
   }
 }
 
-@media screen and (max-width: 820px) {
+/* @media screen and (max-width: 820px) {
   .car-container {
     max-width: 500px;
     margin-left: 1%;
   }
   .carDetails {
-    /* margin-right: 50rem; */
-    /* margin-left: 0%; */
+    margin-right: 50rem;
+    margin-left: 0%;
   }
   .photo {
-    width: 48rem;
+    width: 48rem !important;
     margin-left: 0%;
   }
 
   .past-review {
-    /* width: 390px; */
+    width: 390px;
   }
 
   .car-details {
     width: 100%;
   }
-}
+
+  .both-reviews {}
+} */
