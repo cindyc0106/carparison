@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Box, Heading, Text, Divider, ListItem, List, Avatar, Flex } from "@chakra-ui/react"
 import { FaStar } from "react-icons/fa";
-//import Review from "./Review";
+import AverageReview from "./AverageReview";
 import "./PastReviewList.css";
 
 
@@ -65,7 +65,7 @@ function PastReviewList(props) {
   })
   return (
     <div className="old-review">
-
+      <AverageReview make={props.make} model={props.model} year={props.year} />
     <h1> 
       <Box maxW='lg' maxH='lg' overflow='auto' borderWidth="0px" >
         <List >

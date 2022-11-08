@@ -29,6 +29,10 @@
   border-bottom: 1px solid #504F4C !important;
 }
 
+::placeholder {
+  color:#504f4c !important
+}
+
 .subscribe:before,
 .subscribe:after {
   border: 0 solid transparent;
