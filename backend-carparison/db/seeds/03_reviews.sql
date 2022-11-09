@@ -2,11 +2,15 @@
 INSERT INTO 
 reviews (rating, description, user_name, car_make, car_model, car_year)
 VALUES
-    (4, 'This car is dope!', 'Test', 'lamborghini', 'urus', 2019),
-    (5, 'This car is doper!', 'Test', 'lamborghini', 'urus', 2019),
-    (3, 'This car is aight!', 'Test', 'lamborghini', 'urus', 2019),
+    (1, 'Why Lamborghini?', 'Ferrari Enzo', 'lamborghini', 'urus', 2019),
+    (5, 'What a sexy car', 'Yiqi Zhang', 'lamborghini', 'urus', 2019),
+    (5, 'The coupe is ********!', 'Rich the Kid', 'lamborghini', 'urus', 2019),
     (2, 'This car is meh!', 'Test', 'toyota', 'corolla', 2015),
     (4, 'This car is good!', 'Test', 'toyota', 'corolla', 2015),
     (2, 'This car is bad!', 'Test', 'toyota', 'corolla', 2015),
-    (1, 'This car is terrible!', 'Test', 'audi', 'r8', 2010),
-    (5, 'This car is great!', 'Test', 'audi', 'r8', 2010)
+    (1, 'Too slow', 'Cindy Chen', 'audi', 'r8', 2010),
+    (5, 'Dreams do come true', 'Omid Ghahramni', 'audi', 'r8', 2010),
+    (2, 'I can skate faster than this car', 'Connor McJesus', 'lamborghini', 'urus', 2019),
+    (5, 'Great car! Please hire me so I can buy my daughter one :)', 'Cindy Chen', 'lamborghini', 'urus', 2019),
+    (1, 'Mercy all the way!', 'Omid Ghahramani', 'lamborghini', 'urus', 2019)
+    

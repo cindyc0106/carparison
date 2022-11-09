@@ -14,7 +14,7 @@
 
 
 .carSearch {
-  margin-right: 70px;
+  margin-right: 58px;
   margin-top: 88px;
   width: 170px;
   height: 59px;
@@ -119,5 +119,21 @@
     display: flex;
     margin-right: 0px;
     margin-top: 1rem;
+  }
+
+  .carSearch {
+    margin-right: 3px;
+    margin-top: 28px;
+    width: 170px;
+    height: 59px;
+    background-color: white;
+    box-shadow: black 0px 5px 15px;
+    overflow: hidden;
+    overflow-y: auto;
+    position: absolute;
+  }
+
+  .css-43x2eo {
+    display: none !important;
   }
 }
