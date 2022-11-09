@@ -33,9 +33,10 @@
   display: flex;
   align-items: center;
   padding-left: 5px;
-  font-size: small;
-
+  font-size: medium;
+  background-color: #d8cfd0;
 }
+
 .carSearch .carResults:hover {
   background-color: #A9B4A4;
 }
@@ -71,6 +72,7 @@
   position: absolute;
   margin-right: 0;
   border-color: #a9b4a400;
+  font-size: large;
 }
 
 .chakra-breadcrumb {
@@ -123,10 +125,10 @@
   }
 
   .carSearch {
-    margin-right: 3px;
-    margin-top: 28px;
-    width: 170px;
-    height: 59px;
+    margin-right: 0px;
+    margin-top: 42px;
+    width: 270px;
+    height: 78px;
     background-color: white;
     box-shadow: black 0px 5px 15px;
     overflow: hidden;
