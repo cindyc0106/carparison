@@ -14,6 +14,21 @@ This project was designed by [Cindy Chen](https://github.com/cindyc0106), [Omid 
 
 ## Final Product
 
+Searching for a vehicle through API
+!['Searching'](https://github.com/cindyc0106/carparison/blob/feature/README/frontend/src/pages/image/car-search.gif)
+
+Adding a rating to vehicle
+!['Rating'](https://github.com/cindyc0106/carparison/blob/feature/README/frontend/src/pages/image/car-rating.gif)
+
+Subscribing to email and chat using [Kommunicate](https://www.kommunicate.io/)
+!['Email&Chat'](https://github.com/cindyc0106/carparison/blob/feature/README/frontend/src/pages/image/email-and-chat.gif)
+
+Buying use a coffee using [Stripe](https://stripe.com/en-ca)!
+!['Coffee'](https://github.com/cindyc0106/carparison/blob/feature/README/frontend/src/pages/image/stripe.gif)
+
+Tablet view
+!['Tablet](https://github.com/cindyc0106/carparison/blob/feature/README/frontend/src/pages/image/tablet-view.gif)
+
 
 ## Getting Started
 
