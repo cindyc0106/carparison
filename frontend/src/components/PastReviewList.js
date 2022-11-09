@@ -52,10 +52,10 @@ function PastReviewList(props) {
     const star = stars(rating);
     const nonStar = nonStars(rating);
     return (
-      <Box maxW='lg' key={index} borderWidth="0px" borderRadius="lg" >
+      <Box maxW='lg'  borderWidth="0px" borderRadius="lg" >
         <Heading fontSize={20} display='flex' flexDirection='row' p={2} justifyContent='space-between' bg='#a9b4a4a8' borderRadius={"md"}>
-          <div><Avatar boxSize='1.25em'/> {review.user_name}</div>
-          <Flex direction='row'>{star}{nonStar}</Flex>
+          <div ><Avatar boxSize='1.25em'/> {review.user_name}</div>
+          <Flex key={index} direction='row'>{star}{nonStar}</Flex>
         </Heading>
         <Divider orientation="horizontal" />
         <Text p={4} display='flex' justifyContent='left'>{review.description}</Text>

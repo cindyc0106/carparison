@@ -24,6 +24,7 @@ function AverageReview(props) {
     return (
 
           <FaStar 
+            key={index}
             size={25} 
             color={ value <= averageReview ? "#FFD700": "#504F4C"}
           />
