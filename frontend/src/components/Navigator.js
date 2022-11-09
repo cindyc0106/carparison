@@ -84,20 +84,23 @@ function Navigator() {
         <form className="form">
           <div className="searchBar">
             <Input
+              id='searchinput'
               type="search"
               placeholder="Search for your car..."
-              size="xs"
+              size="m"
               value={search}
               onChange={handleSearch}
             />
+            &nbsp;
             <div>
               <Button
                 colorScheme="teal"
                 variant="outline"
-                size="xs"
+                height="40px"
+                size="s"
                 onClick={() => { clickHandler(make, models, year); setQuery(""); }}
               >
-                Submit
+                &nbsp;Submit&nbsp;
               </Button>
             </div>
           </div>

@@ -14,10 +14,10 @@
 
 
 .carSearch {
-  margin-right: 58px;
-  margin-top: 88px;
-  width: 170px;
-  height: 59px;
+  margin-right: 68px;
+  margin-top: 98px;
+  width: 270px;
+  height: 75px;
   background-color: white;
   box-shadow: black 0px 5px 15px;
   overflow: hidden;
@@ -33,9 +33,10 @@
   display: flex;
   align-items: center;
   padding-left: 5px;
-  font-size: small;
-
+  font-size: medium;
+  background-color: #d8cfd0;
 }
+
 .carSearch .carResults:hover {
   background-color: #A9B4A4;
 }
@@ -56,6 +57,7 @@
 .form {
   display: flex;
 }
+
 .icon {
   padding: 0 5px;
 }
@@ -66,10 +68,12 @@
 }
 
 .chakra-input {
-  width: 170px  !important;
+  width: 270px !important;
+  height: 40px !important;
   position: absolute;
   margin-right: 0;
   border-color: #a9b4a400;
+  font-size: large;
 }
 
 .chakra-breadcrumb {
@@ -81,6 +85,21 @@
   z-index: 4
 }
 
+
+@media only screen and (max-width: 1100px) {
+  .chakra-input {
+    width: 170px !important;
+    height: 40px !important;
+  }
+
+  .carSearch {
+    margin-right: 68px;
+    margin-top: 98px;
+    width: 170px;
+    height: 75px;
+  }
+}
+
 @media only screen and (min-device-width: 701px) and (max-width: 1000px) {
 
   .chakra-button.coffee-button {
@@ -88,21 +107,23 @@
     top: 20px;
     right: 160px;
   }
+
 }
 
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 700px) {
   .nav {
-    display:none;
+    display: none;
     flex-direction: column;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
     margin: 45px 15px 0px 15px;
     position: relative;
     z-index: 4;
-    opacity: 1 ;
+    opacity: 1;
     margin-bottom: 5rem;
     /* background-color: aqua; */
   }
+
   .menu {
     display: flex;
     align-items: center;
@@ -122,10 +143,10 @@
   }
 
   .carSearch {
-    margin-right: 3px;
-    margin-top: 28px;
+    margin-right: 0px;
+    margin-top: 42px;
     width: 170px;
-    height: 59px;
+    height: 70px;
     background-color: white;
     box-shadow: black 0px 5px 15px;
     overflow: hidden;

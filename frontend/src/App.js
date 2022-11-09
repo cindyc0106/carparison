@@ -21,7 +21,7 @@ function App() {
   // background image rotation
   let c = 45;
   function draw() {
-    document.documentElement.style.setProperty('--direction', c++ + 'deg');
+    document.documentElement.style.setProperty('--direction', (c++)/3 + 'deg');
     requestAnimationFrame(draw);
   }
 
