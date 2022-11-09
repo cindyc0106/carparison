@@ -52,7 +52,8 @@ Tablet view
 ## Dependencies
 
 #### Front-End
-` "@chakra-ui/react": "^2.3.6",
+``` 
+  "@chakra-ui/react": "^2.3.6",
   "@emailjs/browser": "^3.9.0",
   "@emotion/react": "^11.10.5",
   "@emotion/styled": "^11.10.5",
@@ -65,10 +66,10 @@ Tablet view
   "react-icons": "^4.6.0",
   "react-scripts": "5.0.1",
   "web-vitals": "^2.1.4"
-`
+```
 
 #### Back-End
-`
+```
   "axios": "^1.1.3",
   "cookie-parser": "~1.4.4",
   "cors": "^2.8.5",
@@ -77,4 +78,4 @@ Tablet view
   "morgan": "~1.9.1",
   "pg": "^8.8.0",
   "stripe": "^10.15.0"
-`
+```
