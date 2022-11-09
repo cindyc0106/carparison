@@ -28,12 +28,12 @@ export default function Email() {
         <form id="email-form" onSubmit={sendEmail} ref={form}>
         <Input
           className="email"
-          placeholder="subscribe with your email"
+          placeholder="Subscribe with your email"
           size="sm"
           name="email"
         />
         <Button className="subscribe" colorScheme="gray" size="xs" type="submit" value="Send">
-          subscribe
+          Subscribe
         </Button>
         </form>
       </span>
