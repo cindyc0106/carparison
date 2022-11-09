@@ -42,7 +42,7 @@ Tablet view
   - API_KEY = [API Ninja Key](https://rapidapi.com/apininjas/api/cars-by-api-ninjas/)
   - STRIPE_PRIVATE_KEY= [Stripe](https://stripe.com/en-ca)
 3. Install dependencies in both frontend and backend-carparison: `npm i`
-4. Run `psql \i db/schema/00_script.sql` as `\u carparison`
+4. Run `psql \i db/schema/00_script.sql` as `\u carparison` to seed initial local database
 5. Run the server in backend-carparison: `npm start`
   - Note: nodemon is used, so you should not have to restart your server
 6. Run the client in frontend: `npm start`
@@ -50,3 +50,31 @@ Tablet view
 
 
 ## Dependencies
+
+#### Front-End
+` "@chakra-ui/react": "^2.3.6",
+  "@emailjs/browser": "^3.9.0",
+  "@emotion/react": "^11.10.5",
+  "@emotion/styled": "^11.10.5",
+  "@testing-library/jest-dom": "^5.16.5",
+  "@testing-library/react": "^13.4.0",
+  "@testing-library/user-event": "^13.5.0",
+  "framer-motion": "^7.6.2",
+  "react": "^18.2.0",
+  "react-dom": "^18.2.0",
+  "react-icons": "^4.6.0",
+  "react-scripts": "5.0.1",
+  "web-vitals": "^2.1.4"
+`
+
+#### Back-End
+`
+  "axios": "^1.1.3",
+  "cookie-parser": "~1.4.4",
+  "cors": "^2.8.5",
+  "debug": "~2.6.9",
+  "express": "~4.16.1",
+  "morgan": "~1.9.1",
+  "pg": "^8.8.0",
+  "stripe": "^10.15.0"
+`
