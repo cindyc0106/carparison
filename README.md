@@ -32,5 +32,21 @@ Tablet view
 
 ## Getting Started
 
+1. Create the `.env` in `backend-carparison` by using `.env_development` as a reference.
+2. Update the .env file with your correct local information 
+  - DB_HOST = `localhost` 
+  - DB_USER = `labber` 
+  - DB_PASS = `labber`
+  - DB_NAME = `carparison`
+  - DB_PORT = `5432`
+  - API_KEY = [API Ninja Key](https://rapidapi.com/apininjas/api/cars-by-api-ninjas/)
+  - STRIPE_PRIVATE_KEY= [Stripe](https://stripe.com/en-ca)
+3. Install dependencies in both frontend and backend-carparison: `npm i`
+4. Run `psql \i db/schema/00_script.sql` as `\u carparison`
+5. Run the server in backend-carparison: `npm start`
+  - Note: nodemon is used, so you should not have to restart your server
+6. Run the client in frontend: `npm start`
+7. Visit `http://localhost:3002/` 
+
 
 ## Dependencies
