@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { FormControl, Textarea, Button, FormLabel, Input } from "@chakra-ui/react";
+import { FormControl, Textarea, Button, FormLabel, Input, useToast } from "@chakra-ui/react";
 import "./Review.css";
 // import RatingStars from "./RatingStars";
 import { FaStar } from "react-icons/fa";
@@ -43,8 +43,26 @@ function Review(props) {
   const enterName = (event) => {
     setUser(event.target.value)
   }
+  const toast = useToast()
 
   function save(name, review, rating, make, model, year) {
+    if (name && review && rating) {
+      toast({
+      title: 'Review submitted!',
+      description: "Your review has been successfully submitted.",
+      status: 'success',
+      duration: 3000,
+      isClosable: true,
+    })}
+    if (!name || !review || !rating) {
+      toast({
+        title: 'Incomplete required fields!',
+        description: "Please input your name, review and rating.",
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      })
+    }
     setUser("")
     setReview("")
     setRating(null)
@@ -86,7 +104,9 @@ function Review(props) {
         <Button className="submit-btn" colorScheme="teal" variant="outline" onClick={() => {save(user, review, rating, props.make, props.model, props.year)}} >
           Submit
         </Button>
+        
         </span>
+       
         </FormControl>
       </form>
     </h1>

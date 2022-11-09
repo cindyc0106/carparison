@@ -7,9 +7,9 @@ const ProductDisplay = () => (
   <section>
     <form action="/create-checkout-session" method="POST">
       <Button className="coffee-button" type="submit" >
-        <FaCoffee/>
-          Gift us a coffee!
-        <FaCoffee/>
+        <FaCoffee style={{paddingRight:"3px"}}/>
+        Gift us a coffee!
+        <FaCoffee style={{paddingLeft:"2px"}}/>
       </Button>
     </form>
   </section>
