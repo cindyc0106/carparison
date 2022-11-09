@@ -14,10 +14,10 @@
 
 
 .carSearch {
-  margin-right: 58px;
-  margin-top: 88px;
-  width: 170px;
-  height: 59px;
+  margin-right: 68px;
+  margin-top: 98px;
+  width: 270px;
+  height: 78px;
   background-color: white;
   box-shadow: black 0px 5px 15px;
   overflow: hidden;
@@ -66,7 +66,8 @@
 }
 
 .chakra-input {
-  width: 170px  !important;
+  width: 270px  !important;
+  height: 40px !important;
   position: absolute;
   margin-right: 0;
   border-color: #a9b4a400;

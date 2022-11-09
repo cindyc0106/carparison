@@ -8,7 +8,7 @@ const ProductDisplay = () => (
     <form action="/create-checkout-session" method="POST">
       <Button className="coffee-button" type="submit" >
         <FaCoffee/>
-        Gift us a coffee!
+        &nbsp;Gift us a coffee!&nbsp;
         <FaCoffee/>
       </Button>
     </form>
