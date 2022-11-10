@@ -11,9 +11,6 @@ const frontEnd = (
       <Container>
         <FaBook /> <Text> &nbsp; Chakra UI</Text>
       </Container>
-      <Container>
-        <FaRegEnvelope /> <Text> &nbsp; EmailJS </Text>
-      </Container>
     </Stack>
   </>
 );
@@ -41,15 +38,18 @@ const API = (
         <FaRegCreditCard /> <Text> &nbsp; Stripe</Text>
       </Container>
       <Container>
-        <FaCarSide /> <Text> &nbsp; API Ninjas Cars </Text>
+        <FaRocketchat /> <Text> &nbsp; Kommunicate </Text>
       </Container>
     </Stack>
     <Stack direction='column' width={228}>
       <Container>
-        <FaRocketchat /> <Text> &nbsp; Kommunicate </Text>
+        <FaRegEnvelope /> <Text> &nbsp; EmailJS </Text>
       </Container>
       <Container>
         <FaCarAlt /> <Text> &nbsp; Imagin Studio </Text>
+      </Container>
+      <Container>
+        <FaCarSide /> <Text> &nbsp; API Ninjas Cars </Text>
       </Container>
     </Stack>
   </>
