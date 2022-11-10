@@ -10,7 +10,7 @@ function Video() {
   return (
     <>
       <div className='video-component'>
-        <h1 className='video-header'><strong>Hear from our experts on latest car news</strong>  </h1>
+        <h1 className='video-header'><strong>Hear about the latest car news from our experts!</strong>  </h1>
         <br></br>
         <div className='video-container'>
           <iframe id="video-main" src="https://www.youtube.com/embed/6iIvuip6ccE" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
